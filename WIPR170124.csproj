@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EC875F3-B09E-4DAE-B9B9-DBE5A204EDDC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WIPR170124</RootNamespace>
+    <AssemblyName>WIPR170124</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WIPR170124.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.25.1.35\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="COURSEs\Cou_AddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COURSEs\Cou_AddFrm.Designer.cs">
+      <DependentUpon>Cou_AddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COURSEs\Cou_EditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COURSEs\Cou_EditFrm.Designer.cs">
+      <DependentUpon>Cou_EditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COURSEs\Cou_ManageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COURSEs\Cou_ManageFrm.Designer.cs">
+      <DependentUpon>Cou_ManageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COURSEs\Cou_PrintFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COURSEs\Cou_PrintFrm.Designer.cs">
+      <DependentUpon>Cou_PrintFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COURSEs\Cou_RemoveFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COURSEs\Cou_RemoveFrm.Designer.cs">
+      <DependentUpon>Cou_RemoveFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COURSEs\Cou_StuListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COURSEs\Cou_StuListFrm.Designer.cs">
+      <DependentUpon>Cou_StuListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADEs\Gra_AddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_AddFrm.Designer.cs">
+      <DependentUpon>Gra_AddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADEs\Gra_AverageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_AverageFrm.Designer.cs">
+      <DependentUpon>Gra_AverageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADEs\Gra_GradeCellFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_GradeCellFrm.Designer.cs">
+      <DependentUpon>Gra_GradeCellFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADEs\Gra_ManageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_ManageFrm.Designer.cs">
+      <DependentUpon>Gra_ManageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADEs\Gra_RemoveFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_RemoveFrm.Designer.cs">
+      <DependentUpon>Gra_RemoveFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClasses\ACCOUNT.cs" />
+    <Compile Include="ServiceClasses\COURSE.cs" />
+    <Compile Include="ServiceClasses\GRADE.cs" />
+    <Compile Include="ServiceClasses\Importer.cs" />
+    <Compile Include="ServiceForms\ImportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForms\ImportFrm.Designer.cs">
+      <DependentUpon>ImportFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="STUDENTs\StuAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuAddFrm.Designer.cs">
+      <DependentUpon>StuAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClasses\Exporter.cs" />
+    <Compile Include="ServiceForms\ExportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForms\ExportFrm.Designer.cs">
+      <DependentUpon>ExportFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log&amp;Reg\MailLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\MailLogin.Designer.cs">
+      <DependentUpon>MailLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log&amp;Reg\MailRegis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\MailRegis.Designer.cs">
+      <DependentUpon>MailRegis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuCouListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuCouListFrm.Designer.cs">
+      <DependentUpon>StuCouListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuManageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuManageFrm.Designer.cs">
+      <DependentUpon>StuManageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceForms\ModifyAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForms\ModifyAccounts.Designer.cs">
+      <DependentUpon>ModifyAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClasses\OTPServices.cs" />
+    <Compile Include="STUDENTs\StuModifyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuModifyInfo.Designer.cs">
+      <DependentUpon>StuModifyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClasses\PassHasher.cs" />
+    <Compile Include="STUDENTs\StuPrintFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuPrintFrm.Designer.cs">
+      <DependentUpon>StuPrintFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log&amp;Reg\ResetPassFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\ResetPassFrm.Designer.cs">
+      <DependentUpon>ResetPassFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuReportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuReportFrm.Designer.cs">
+      <DependentUpon>StuReportFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuSeacrhFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuSeacrhFrm.Designer.cs">
+      <DependentUpon>StuSeacrhFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceClasses\STUDENT.cs" />
+    <Compile Include="ServiceClasses\DataBase_Access.cs" />
+    <Compile Include="ServiceForms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STUDENTs\StuListv2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuListv2.Designer.cs">
+      <DependentUpon>StuListv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuList.Designer.cs">
+      <DependentUpon>StuList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuListEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuListEditor.Designer.cs">
+      <DependentUpon>StuListEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTs\StuStatisticFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuStatisticFrm.Designer.cs">
+      <DependentUpon>StuStatisticFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIPR_170124DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="COURSEs\Cou_AddFrm.resx">
+      <DependentUpon>Cou_AddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\Cou_EditFrm.resx">
+      <DependentUpon>Cou_EditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\Cou_ManageFrm.resx">
+      <DependentUpon>Cou_ManageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\Cou_PrintFrm.resx">
+      <DependentUpon>Cou_PrintFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\Cou_RemoveFrm.resx">
+      <DependentUpon>Cou_RemoveFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\Cou_StuListFrm.resx">
+      <DependentUpon>Cou_StuListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_AddFrm.resx">
+      <DependentUpon>Gra_AddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_AverageFrm.resx">
+      <DependentUpon>Gra_AverageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_GradeCellFrm.resx">
+      <DependentUpon>Gra_GradeCellFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_ManageFrm.resx">
+      <DependentUpon>Gra_ManageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_RemoveFrm.resx">
+      <DependentUpon>Gra_RemoveFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForms\ImportFrm.resx">
+      <DependentUpon>ImportFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuAddFrm.resx">
+      <DependentUpon>StuAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForms\ExportFrm.resx">
+      <DependentUpon>ExportFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\MailLogin.resx">
+      <DependentUpon>MailLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\MailRegis.resx">
+      <DependentUpon>MailRegis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuCouListFrm.resx">
+      <DependentUpon>StuCouListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuManageFrm.resx">
+      <DependentUpon>StuManageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForms\ModifyAccounts.resx">
+      <DependentUpon>ModifyAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuModifyInfo.resx">
+      <DependentUpon>StuModifyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuPrintFrm.resx">
+      <DependentUpon>StuPrintFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\ResetPassFrm.resx">
+      <DependentUpon>ResetPassFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuReport.rdlc" />
+    <EmbeddedResource Include="STUDENTs\StuSeacrhFrm.resx">
+      <DependentUpon>StuSeacrhFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuListv2.resx">
+      <DependentUpon>StuListv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuList.resx">
+      <DependentUpon>StuList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuListEditor.resx">
+      <DependentUpon>StuListEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuStatisticFrm.resx">
+      <DependentUpon>StuStatisticFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="WIPR_170124DataSet.xsc">
+      <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WIPR_170124DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WIPR_170124DataSet.xss">
+      <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utexLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\closedEyeIcon.png" />
+    <None Include="Resources\openEyeIcon.png" />
+    <Content Include="Resources\hcmuteLogo.png" />
+    <Content Include="Resources\profileIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
