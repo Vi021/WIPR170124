@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using WIPR170124.STUDENTs;
 
 namespace WIPR170124
 {
@@ -163,6 +164,7 @@ namespace WIPR170124
             dGV_1.DataSource = filteredTable;
         }
 
+        private DataTable _FilteredDT = null;
         private void bttn_Done_Click(object sender, EventArgs e)
         {
             if (comB_Filter.SelectedItem.ToString().Contains("Gender"))
@@ -207,12 +209,24 @@ namespace WIPR170124
                 FilterDataGridView(selected);
             }
 
+            _FilteredDT = dGV_1.DataSource as DataTable;
+
             //...
         }
 
         private void bttn_Print_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not handled", "StuSys", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            StuPrinterFrm sPFrm = new StuPrinterFrm();
+            sPFrm._SourceDT = _FilteredDT;
+            sPFrm.ShowDialog();
         }
     }
 }
+
+
+
+/* PROBLEMS
+ * Filter combine gender & stuID still bug -> print error in rows
+ * case where fromName > toName, handle?
+ * 
+ */
