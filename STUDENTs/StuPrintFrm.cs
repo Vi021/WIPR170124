@@ -155,7 +155,6 @@ namespace WIPR170124
             DataTable dataTable = dGV_1.DataSource as DataTable;
 
             // Filter the DataTable to include rows within the specified range of names
-                // case where fromName > toName, handle?
             DataTable filteredTable = dataTable.AsEnumerable()
                 .Where(row => string.Compare(row[selected].ToString().Trim(), fromName) >= 0
                            && string.Compare(row[selected].ToString().Trim(), toName) <= 0)
@@ -228,6 +227,6 @@ namespace WIPR170124
 
 /* PROBLEMS
  * Filter combine gender & stuID still bug -> print error in rows
- * 
+ * case where fromName > toName, handle?
  * 
  */
