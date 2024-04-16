@@ -42,11 +42,13 @@ namespace WIPR170124.GRADEs
                 int selected = comB_By.SelectedIndex;
                 if (selected == 0)
                 {
-                    string getStr = "SELECT CourseTable.CID, ";
+                    string getStr = "SELECT CourseTable.CID, CName, Period, CourseTable.Sem, Grade FROM CoursTable JOIN EnrollTable";
+                    //TODO: Create VIEW -> Find avg of each course, inlcudes course that dont have any enrolled student
                 }
                 else if (selected == 1)
                 {
-
+                    string getStr = "SELECT ";
+                    //TODO: Similar but avg of student instead
                 }
                 else
                 {

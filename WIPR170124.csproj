@@ -155,6 +155,12 @@
       <DependentUpon>ImportFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="STUDENTs\StuPrinterFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STUDENTs\StuPrinterFrm.Designer.cs">
+      <DependentUpon>StuPrinterFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="STUDENTs\StuAddFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceForms\ImportFrm.resx">
       <DependentUpon>ImportFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STUDENTs\StuPrinterFrm.resx">
+      <DependentUpon>StuPrinterFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STUDENTs\StuAddFrm.resx">
       <DependentUpon>StuAddFrm.cs</DependentUpon>
