@@ -299,6 +299,20 @@ namespace WIPR170124
 
         }
 
+        // SCORE Result: Score Average Result
+        private void scoreAverageResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gra_GraAvgResultFrm gGARF = new Gra_GraAvgResultFrm();
+            gGARF.ShowDialog();
+        }
+
+        // SCORE Result: Statistic Result
+        private void statisticResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gra_StatisticResultFrm gSRF = new Gra_StatisticResultFrm();
+            gSRF.ShowDialog();
+        }
+
 
         // ADMIN Enabled
         private void aDMINToolStripMenuItem_Click(object sender, EventArgs e)

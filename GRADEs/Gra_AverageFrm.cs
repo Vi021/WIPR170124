@@ -70,7 +70,7 @@ namespace WIPR170124.GRADEs
 
                     dGV_Avg.DataSource = dT;
                     dGV_Avg.Columns["StuID"].HeaderText = "Student ID";
-                    dGV_Avg.Columns["LName"].HeaderText = "lastname";
+                    dGV_Avg.Columns["LName"].HeaderText = "Lastname";
                     dGV_Avg.Columns["Fname"].HeaderText = "Firstname";
                     dGV_Avg.Columns["AvgGr"].HeaderText = "Average";
                     dGV_Avg.Columns["AvgGr"].DefaultCellStyle.Format = "N2";

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnStrp_1 = new System.Windows.Forms.MenuStrip();
             this.sTUDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +64,8 @@
             this.tlTp_1 = new System.Windows.Forms.ToolTip(this.components);
             this.dGV_Accounts = new System.Windows.Forms.DataGridView();
             this.bttn_Done = new System.Windows.Forms.Button();
+            this.scoreAverageResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStrp_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Accounts)).BeginInit();
             this.SuspendLayout();
@@ -268,8 +270,11 @@
             // 
             // resultToolStripMenuItem
             // 
+            this.resultToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.scoreAverageResultToolStripMenuItem,
+            this.statisticResultToolStripMenuItem});
             this.resultToolStripMenuItem.Name = "resultToolStripMenuItem";
-            this.resultToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.resultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.resultToolStripMenuItem.Text = "Result";
             // 
             // aDMINToolStripMenuItem
@@ -319,31 +324,31 @@
             this.dGV_Accounts.AllowUserToResizeRows = false;
             this.dGV_Accounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Accounts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_Accounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Accounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dGV_Accounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_Accounts.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dGV_Accounts.Location = new System.Drawing.Point(11, 29);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGV_Accounts.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dGV_Accounts.Location = new System.Drawing.Point(11, 42);
             this.dGV_Accounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGV_Accounts.Name = "dGV_Accounts";
             this.dGV_Accounts.ReadOnly = true;
             this.dGV_Accounts.RowHeadersVisible = false;
             this.dGV_Accounts.RowHeadersWidth = 62;
             this.dGV_Accounts.RowTemplate.Height = 28;
-            this.dGV_Accounts.Size = new System.Drawing.Size(881, 439);
+            this.dGV_Accounts.Size = new System.Drawing.Size(881, 426);
             this.dGV_Accounts.TabIndex = 1;
             this.dGV_Accounts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Accounts_CellDoubleClick);
             // 
@@ -358,6 +363,20 @@
             this.bttn_Done.Text = "Done";
             this.bttn_Done.UseVisualStyleBackColor = true;
             this.bttn_Done.Click += new System.EventHandler(this.bttn_Done_Click);
+            // 
+            // scoreAverageResultToolStripMenuItem
+            // 
+            this.scoreAverageResultToolStripMenuItem.Name = "scoreAverageResultToolStripMenuItem";
+            this.scoreAverageResultToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.scoreAverageResultToolStripMenuItem.Text = "Score Average Result";
+            this.scoreAverageResultToolStripMenuItem.Click += new System.EventHandler(this.scoreAverageResultToolStripMenuItem_Click);
+            // 
+            // statisticResultToolStripMenuItem
+            // 
+            this.statisticResultToolStripMenuItem.Name = "statisticResultToolStripMenuItem";
+            this.statisticResultToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.statisticResultToolStripMenuItem.Text = "Statistic Result";
+            this.statisticResultToolStripMenuItem.Click += new System.EventHandler(this.statisticResultToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -415,5 +434,7 @@
         private System.Windows.Forms.ToolStripMenuItem resultToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byCoursesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byStudentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scoreAverageResultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statisticResultToolStripMenuItem;
     }
 }
