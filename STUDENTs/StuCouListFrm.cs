@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 using WIPR170124.ServiceClasses;
 
@@ -32,7 +30,10 @@ namespace WIPR170124.STUDENTs
 
         private void dGV_CouList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DialogResult result = MessageBox.Show("You are certain to remove this student, yes?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            CID = dGV_CouList.CurrentRow.Cells["CID"].Value.ToString().Trim();
+            Sem = Convert.ToInt32(dGV_CouList.CurrentRow.Cells["Sem"].Value.ToString());
+
+            DialogResult result = MessageBox.Show($"You are certain to remove this student ({StuID}) from this course ({CID})?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
             if (result == DialogResult.Cancel)
             {
@@ -41,9 +42,6 @@ namespace WIPR170124.STUDENTs
             else
             {
                 COURSE course = new COURSE();
-
-                CID = dGV_CouList.CurrentRow.Cells["CID"].Value.ToString().Trim();
-                Sem = Convert.ToInt32(dGV_CouList.CurrentRow.Cells["Sem"].Value.ToString());
 
                 if (StuID.Length > 0 && CID.Length > 0 && (0 < Sem && Sem < 4))
                 {

@@ -46,13 +46,14 @@ namespace WIPR170124.GRADEs
             {
                 erPr_Grade.Clear();
 
-                float grade = (float)Convert.ToDouble(txtB_Grade.Text);
+                float grade = (float)Math.Round(Convert.ToDouble(txtB_Grade.Text), 2);
                 if (0 <= grade && grade <= 10)
                 {
                     erPr_Grade.Clear();
                     GRADE g = new GRADE();
                     if (g.UpdateGrade(StuID, CID, Sem, grade))
                     {
+                        Grade = grade;
                         this.Gra_GradeCellFrm_Load(sender, e);
                     }
                     else
@@ -67,7 +68,7 @@ namespace WIPR170124.GRADEs
             }
             else
             {
-                erPr_Grade.SetError(txtB_Grade, "Score can't be empty, remove grade instead");
+                erPr_Grade.SetError(txtB_Grade, "Score can't be empty");
             }
         }
 
@@ -98,7 +99,7 @@ namespace WIPR170124.GRADEs
             }
             else
             {
-                erPr_Grade.SetError(txtB_Grade, "Score can't be empty, remove grade instead");
+                erPr_Grade.SetError(txtB_Grade, "Score can't be empty");
             }
         }
     }

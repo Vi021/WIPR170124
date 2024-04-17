@@ -47,12 +47,15 @@
             this.dGV_List.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_List.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dGV_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_List.Location = new System.Drawing.Point(12, 70);
+            this.dGV_List.Location = new System.Drawing.Point(11, 56);
+            this.dGV_List.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGV_List.Name = "dGV_List";
+            this.dGV_List.ReadOnly = true;
             this.dGV_List.RowHeadersVisible = false;
             this.dGV_List.RowHeadersWidth = 62;
             this.dGV_List.RowTemplate.Height = 28;
-            this.dGV_List.Size = new System.Drawing.Size(704, 432);
+            this.dGV_List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_List.Size = new System.Drawing.Size(626, 346);
             this.dGV_List.TabIndex = 0;
             this.dGV_List.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_List_CellDoubleClick);
             // 
@@ -60,18 +63,19 @@
             // 
             this.lbl_ID.AutoSize = true;
             this.lbl_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbl_ID.Location = new System.Drawing.Point(25, 31);
+            this.lbl_ID.Location = new System.Drawing.Point(22, 25);
             this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(32, 22);
+            this.lbl_ID.Size = new System.Drawing.Size(26, 18);
             this.lbl_ID.TabIndex = 1;
             this.lbl_ID.Text = "ID:";
             // 
             // comB_ID
             // 
             this.comB_ID.FormattingEnabled = true;
-            this.comB_ID.Location = new System.Drawing.Point(61, 25);
+            this.comB_ID.Location = new System.Drawing.Point(54, 20);
+            this.comB_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comB_ID.Name = "comB_ID";
-            this.comB_ID.Size = new System.Drawing.Size(113, 28);
+            this.comB_ID.Size = new System.Drawing.Size(101, 24);
             this.comB_ID.TabIndex = 2;
             this.comB_ID.SelectedIndexChanged += new System.EventHandler(this.comB_ID_SelectedIndexChanged);
             // 
@@ -79,27 +83,28 @@
             // 
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbl_Name.Location = new System.Drawing.Point(190, 31);
+            this.lbl_Name.Location = new System.Drawing.Point(169, 25);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(62, 22);
+            this.lbl_Name.Size = new System.Drawing.Size(52, 18);
             this.lbl_Name.TabIndex = 3;
             this.lbl_Name.Text = "Name:";
             // 
             // txtB_Name
             // 
-            this.txtB_Name.Location = new System.Drawing.Point(258, 25);
+            this.txtB_Name.Location = new System.Drawing.Point(229, 20);
+            this.txtB_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtB_Name.Name = "txtB_Name";
             this.txtB_Name.ReadOnly = true;
-            this.txtB_Name.Size = new System.Drawing.Size(257, 26);
+            this.txtB_Name.Size = new System.Drawing.Size(229, 22);
             this.txtB_Name.TabIndex = 4;
             // 
             // lbl_Sem
             // 
             this.lbl_Sem.AutoSize = true;
             this.lbl_Sem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbl_Sem.Location = new System.Drawing.Point(536, 31);
+            this.lbl_Sem.Location = new System.Drawing.Point(476, 25);
             this.lbl_Sem.Name = "lbl_Sem";
-            this.lbl_Sem.Size = new System.Drawing.Size(91, 22);
+            this.lbl_Sem.Size = new System.Drawing.Size(76, 18);
             this.lbl_Sem.TabIndex = 1;
             this.lbl_Sem.Text = "Semester:";
             // 
@@ -111,17 +116,18 @@
             "2",
             "3",
             "All"});
-            this.comB_Sem.Location = new System.Drawing.Point(633, 25);
+            this.comB_Sem.Location = new System.Drawing.Point(563, 20);
+            this.comB_Sem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comB_Sem.Name = "comB_Sem";
-            this.comB_Sem.Size = new System.Drawing.Size(60, 28);
+            this.comB_Sem.Size = new System.Drawing.Size(54, 24);
             this.comB_Sem.TabIndex = 2;
             this.comB_Sem.SelectedIndexChanged += new System.EventHandler(this.comB_Sem_SelectedIndexChanged);
             // 
             // Gra_ManageFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 514);
+            this.ClientSize = new System.Drawing.Size(649, 418);
             this.Controls.Add(this.txtB_Name);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.comB_Sem);
@@ -129,6 +135,7 @@
             this.Controls.Add(this.comB_ID);
             this.Controls.Add(this.lbl_ID);
             this.Controls.Add(this.dGV_List);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Gra_ManageFrm";
             this.Text = "Manage score";
             this.Load += new System.EventHandler(this.Gra_ManageFrm_Load);
