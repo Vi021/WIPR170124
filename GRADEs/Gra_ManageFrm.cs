@@ -199,6 +199,7 @@ namespace WIPR170124.GRADEs
             }
 
             load(mode);
+
             loaded = true;
         }
 
@@ -219,6 +220,8 @@ namespace WIPR170124.GRADEs
                         txtB_Name.Text = stuList[id];
                         fillList(mode, id);
                     }
+
+                    dGV_List.Columns["Grade"].DefaultCellStyle.Format = "N2";
                 }
             }
         }
@@ -290,9 +293,10 @@ namespace WIPR170124.GRADEs
                     gGCFrm.SName = dGV_List.CurrentRow.Cells["LName"].Value.ToString().Trim() + " " + dGV_List.CurrentRow.Cells["FName"].Value.ToString().Trim();
                     gGCFrm.Sem = Convert.ToInt32(dGV_List.CurrentRow.Cells["Sem"].Value.ToString());
                     gGCFrm.Grade = (float)Convert.ToDouble(dGV_List.CurrentRow.Cells["Grade"].Value.ToString());
-
                     gGCFrm.ShowDialog();
                     gGCFrm.Dispose();
+
+                    this.comB_ID_SelectedIndexChanged(sender, e);
                     return;
                 }
                 else if (mode == 1)
@@ -305,9 +309,10 @@ namespace WIPR170124.GRADEs
                     gGCFrm.CName = dGV_List.CurrentRow.Cells["CName"].Value.ToString().Trim();
                     gGCFrm.Sem = Convert.ToInt32(dGV_List.CurrentRow.Cells["Sem"].Value.ToString());
                     gGCFrm.Grade = (float)Convert.ToDouble(dGV_List.CurrentRow.Cells["Grade"].Value.ToString());
-
                     gGCFrm.ShowDialog();
                     gGCFrm.Dispose();
+
+                    this.comB_ID_SelectedIndexChanged(sender, e);
                     return;
                 }
             }
