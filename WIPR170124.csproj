@@ -126,6 +126,12 @@
     <Compile Include="GRADEs\Gra_AverageFrm.Designer.cs">
       <DependentUpon>Gra_AverageFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GRADEs\Gra_GraAvgResultFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_GraAvgResultFrm.Designer.cs">
+      <DependentUpon>Gra_GraAvgResultFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GRADEs\Gra_GradeCellFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     </Compile>
     <Compile Include="GRADEs\Gra_RemoveFrm.Designer.cs">
       <DependentUpon>Gra_RemoveFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADEs\Gra_StatisticResultFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_StatisticResultFrm.Designer.cs">
+      <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceClasses\ACCOUNT.cs" />
     <Compile Include="ServiceClasses\COURSE.cs" />
@@ -316,6 +328,9 @@
     <EmbeddedResource Include="GRADEs\Gra_AverageFrm.resx">
       <DependentUpon>Gra_AverageFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_GraAvgResultFrm.resx">
+      <DependentUpon>Gra_GraAvgResultFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GRADEs\Gra_GradeCellFrm.resx">
       <DependentUpon>Gra_GradeCellFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GRADEs\Gra_RemoveFrm.resx">
       <DependentUpon>Gra_RemoveFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_StatisticResultFrm.resx">
+      <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceForms\ImportFrm.resx">
       <DependentUpon>ImportFrm.cs</DependentUpon>
