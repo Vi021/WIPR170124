@@ -156,6 +156,18 @@
     <Compile Include="GRADEs\Gra_StatisticResultFrm.Designer.cs">
       <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Log&amp;Reg\Login2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Login2.Designer.cs">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Register2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log&amp;Reg\Register2.Designer.cs">
+      <DependentUpon>Register2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceClasses\ACCOUNT.cs" />
     <Compile Include="ServiceClasses\COURSE.cs" />
     <Compile Include="ServiceClasses\GRADE.cs" />
@@ -342,6 +354,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GRADEs\Gra_StatisticResultFrm.resx">
       <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\Login2.resx">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log&amp;Reg\Register2.resx">
+      <DependentUpon>Register2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceForms\ImportFrm.resx">
       <DependentUpon>ImportFrm.cs</DependentUpon>

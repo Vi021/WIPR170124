@@ -51,6 +51,9 @@ namespace WIPR170124
             else
             {
                 mnStrp_1.Items.RemoveAt(4);
+                mnStrp_1.Items.RemoveAt(2);
+                mnStrp_1.Items.RemoveAt(1);
+                mnStrp_1.Items.RemoveAt(0);
             }
 
             /**/
@@ -581,3 +584,18 @@ namespace WIPR170124
         }
     }
 }
+
+
+#region TODO
+/*
+ * better way to handle when logging in as admin, static?
+ * 
+ * split to 3 branch:
+ *         | -> admin
+ *    main | -> user -> |
+ *         | -> student -> |
+ * 
+ * request administration for user not student
+ * 
+ */
+#endregion
