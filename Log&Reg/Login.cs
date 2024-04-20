@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using WIPR170124.Log_Reg;
 
 namespace WIPR170124
 {
     public partial class Login : Form
     {
         MyDB myDB = new MyDB();
-        //private bool regiState = false;
-        //private bool mainState = false;
+        internal int regisVer = 0;
+        private bool regiState = false;
+        private bool mainState = false;
 
-        /*public bool RegisterState
+        public bool RegisterState
         {
-            get {return regiState;} 
-            set {regiState = value;}
+            get { return regiState; }
+            set { regiState = value; }
         }
 
         public bool MainState
         {
-            get {return mainState;}
-            set {mainState = value;}
-        }*/
+            get { return mainState; }
+            set { mainState = value; }
+        }
 
         public Login()
         {
@@ -84,8 +86,16 @@ namespace WIPR170124
             //this.DialogResult = DialogResult.OK;
             //this.Close();
             
-            Register regisFrm = new Register();
-            regisFrm.ShowDialog();
+            if (regisVer == 1)
+            {
+                Register regisFrm = new Register();
+                regisFrm.ShowDialog();
+            }
+            else if (regisVer == 2)
+            {
+                Register2 regisFrm2 = new Register2();
+                regisFrm2.ShowDialog();
+            }
         }
 
         private void pctBShowPass_Click(object sender, EventArgs e)
