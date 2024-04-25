@@ -67,33 +67,12 @@ namespace WIPR170124
             }
         }
 
+        internal static int _id = -1;
+        internal static string _username = "";
         private static void log2()
         {
             Login2 loginFrm2 = new Login2();
             Application.Run(loginFrm2);
-
-            /*if (loginFrm.RegisterState)
-            {
-                Register2 regisFrm2 = new Register2();
-                Application.Run(regisFrm2);
-
-                if (regisFrm2.DialogResult == DialogResult.OK)
-                {
-                    //TODO
-                }
-
-                Login loginFrm2 = new Login();
-                Application.Run(loginFrm2);
-
-                loginFrm.MainState = loginFrm2.MainState;
-
-            }
-
-            if (loginFrm.MainState)
-            {
-                MainForm mainFrm = new MainForm();
-                Application.Run(mainFrm);
-            }*/
         }
 
         /// <summary>
@@ -110,8 +89,10 @@ namespace WIPR170124
             //Application.Run(new StudentListFrm());
 
             /*MainForm mFrm = new MainForm();
-            mFrm.setAdState = true;
+            mFrm.setAdState = false;
             Application.Run(mFrm);*/
+
+            //Application.Run(new CONTACTs_GRORPs.CG_MainFrm());
 
             //mail();
             

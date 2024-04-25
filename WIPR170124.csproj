@@ -78,6 +78,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTACT&amp;GROUPs\Con_EditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_EditFrm.Designer.cs">
+      <DependentUpon>Con_EditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\CG_MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\CG_MainFrm.Designer.cs">
+      <DependentUpon>CG_MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_AddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_AddFrm.Designer.cs">
+      <DependentUpon>Con_AddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_ListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_ListFrm.Designer.cs">
+      <DependentUpon>Con_ListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Gro_AddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Gro_AddFrm.Designer.cs">
+      <DependentUpon>Gro_AddFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="COURSEs\Cou_AddFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,9 +199,12 @@
       <DependentUpon>Register2.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceClasses\ACCOUNT.cs" />
+    <Compile Include="ServiceClasses\CONTACT.cs" />
     <Compile Include="ServiceClasses\COURSE.cs" />
     <Compile Include="ServiceClasses\GRADE.cs" />
+    <Compile Include="ServiceClasses\GROUP.cs" />
     <Compile Include="ServiceClasses\Importer.cs" />
+    <Compile Include="ServiceClasses\USER.cs" />
     <Compile Include="ServiceForms\ImportFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +349,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_EditFrm.resx">
+      <DependentUpon>Con_EditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTACT&amp;GROUPs\CG_MainFrm.resx">
+      <DependentUpon>CG_MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_AddFrm.resx">
+      <DependentUpon>Con_AddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_ListFrm.resx">
+      <DependentUpon>Con_ListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTACT&amp;GROUPs\Gro_AddFrm.resx">
+      <DependentUpon>Gro_AddFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="COURSEs\Cou_AddFrm.resx">
       <DependentUpon>Cou_AddFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +504,7 @@
     <None Include="Resources\utexLogo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TODO.txt" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

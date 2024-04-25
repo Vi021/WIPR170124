@@ -39,7 +39,7 @@ namespace WIPR170124.COURSEs
             load();
         }
 
-        private string currentCID = "";
+        //private string currentCID = "";
         private void dGV_Courses_Click(object sender, EventArgs e)
         {
             txtB_CName.Text = dGV_Courses.CurrentRow.Cells["CName"].Value.ToString();

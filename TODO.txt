@@ -1,0 +1,11 @@
+﻿- username/mail - pass login
+	+ user administration request
+- fix import, export
+- print
+- result statistic
+- score average result search button
+- CG refresh & my info
+- Con_Edit edit save phone number (unchanges but error)
+- Con_Edit when load with a id unable to save pic in (edit buttn click)
+- Gro_Edit not done
+- Gro_Remove not done
