@@ -64,9 +64,9 @@ namespace WIPR170124.CONTACT_GROUPs
             if (loaded)
             {
                 int id = Convert.ToInt32(comB_Group.SelectedValue.ToString().Trim());
-                DataTable dt = contact.GetContactsFromGroup(id);
+                DataTable dt = contact.GetContactsFromGroup(id, Program._id);
 
-                if (dt.Columns.Count > 0 && dt.Rows.Count > 0)
+                if (dt.Columns.Count > 0)
                 {
                     dGV_Contacts.DataSource = dt;
                     dGV_Contacts.Columns.RemoveAt(8);

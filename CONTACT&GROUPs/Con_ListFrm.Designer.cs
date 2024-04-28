@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dGV_Contacts = new System.Windows.Forms.DataGridView();
             this.pnl_Menu = new System.Windows.Forms.Panel();
+            this.comB_Group = new System.Windows.Forms.ComboBox();
             this.lbl_Group = new System.Windows.Forms.Label();
             this.lbl_Title = new System.Windows.Forms.Label();
-            this.comB_Group = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Contacts)).BeginInit();
             this.pnl_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -47,23 +47,23 @@
             this.dGV_Contacts.AllowUserToResizeRows = false;
             this.dGV_Contacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Contacts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_Contacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Contacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Contacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_Contacts.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGV_Contacts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Contacts.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dGV_Contacts.Location = new System.Drawing.Point(0, 61);
             this.dGV_Contacts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -87,6 +87,17 @@
             this.pnl_Menu.Size = new System.Drawing.Size(1237, 67);
             this.pnl_Menu.TabIndex = 3;
             // 
+            // comB_Group
+            // 
+            this.comB_Group.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comB_Group.ForeColor = System.Drawing.Color.SlateBlue;
+            this.comB_Group.FormattingEnabled = true;
+            this.comB_Group.Location = new System.Drawing.Point(1074, 21);
+            this.comB_Group.Name = "comB_Group";
+            this.comB_Group.Size = new System.Drawing.Size(140, 26);
+            this.comB_Group.TabIndex = 14;
+            this.comB_Group.SelectedIndexChanged += new System.EventHandler(this.comB_Group_SelectedIndexChanged);
+            // 
             // lbl_Group
             // 
             this.lbl_Group.AutoSize = true;
@@ -108,17 +119,6 @@
             this.lbl_Title.Size = new System.Drawing.Size(257, 25);
             this.lbl_Title.TabIndex = 2;
             this.lbl_Title.Text = "List of Available Contacts";
-            // 
-            // comB_Group
-            // 
-            this.comB_Group.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comB_Group.ForeColor = System.Drawing.Color.SlateBlue;
-            this.comB_Group.FormattingEnabled = true;
-            this.comB_Group.Location = new System.Drawing.Point(1074, 21);
-            this.comB_Group.Name = "comB_Group";
-            this.comB_Group.Size = new System.Drawing.Size(140, 26);
-            this.comB_Group.TabIndex = 14;
-            this.comB_Group.SelectedIndexChanged += new System.EventHandler(this.comB_Group_SelectedIndexChanged);
             // 
             // Con_ListFrm
             // 

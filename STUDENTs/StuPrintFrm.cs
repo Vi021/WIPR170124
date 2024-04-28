@@ -117,8 +117,8 @@ namespace WIPR170124
                             for (int i = 0; i < rowcount; i++)
                             {
                                 string date = dGV_1.Rows[i].Cells[selected].Value.ToString().Trim();
-                                comB_From.Items.Add(date.Substring(0,date.Length-9));
-                                comB_To.Items.Add(date.Substring(0,date.Length-9));
+                                comB_From.Items.Add(date.Substring(0, date.Length - 9));
+                                comB_To.Items.Add(date.Substring(0, date.Length - 9));
                             }
                         }
                         else
@@ -167,58 +167,67 @@ namespace WIPR170124
         private DataTable _FilteredDT = null;
         private void bttn_Done_Click(object sender, EventArgs e)
         {
-            if (comB_Filter.SelectedItem.ToString().Contains("Gender"))
+            try
             {
-                List<string> selectedGenders = new List<string>();
-
-                if (cLB_Gender.CheckedItems.Count == 0)
+                if (comB_Filter.SelectedItem.ToString().Contains("Gender"))
                 {
-                    load();
-                    return;
-                }
+                    List<string> selectedGenders = new List<string>();
 
-                foreach (var item in cLB_Gender.CheckedItems)
-                {
-                    selectedGenders.Add(item.ToString());
-                }
-
-                DataTable dT = dGV_1.DataSource as DataTable;
-                if (dT == null) return;
-
-                foreach (DataRow dR in dT.Rows)
-                {
-                    string gender = dR["Gender"].ToString().Trim();
-                    if (!selectedGenders.Contains(gender))
+                    if (cLB_Gender.CheckedItems.Count == 0)
                     {
-                        dR.Delete();
+                        load();
+                        return;
                     }
+
+                    foreach (var item in cLB_Gender.CheckedItems)
+                    {
+                        selectedGenders.Add(item.ToString());
+                    }
+
+                    DataTable dT = dGV_1.DataSource as DataTable;
+                    if (dT == null) return;
+
+                    DataTable filteredTable = dT.AsEnumerable()
+                        .Where(row => selectedGenders.Contains(row["Gender"].ToString().Trim())).CopyToDataTable();
+
+                    /*foreach (DataRow dR in dT.Rows)
+                    {
+                        string gender = dR["Gender"].ToString().Trim();
+                        if (!selectedGenders.Contains(gender))
+                        {
+                            dR.Delete();        // can cause row error in PrinterFrm
+                        }
+                    }*/
+
+                    dGV_1.DataSource = filteredTable;
+                }
+                else
+                {
+                    string selected = comB_Filter.SelectedItem.ToString();
+                    dGV_1.DataSource = fillStudents();
+                    if (selected.Contains("Student ID")) selected = "StuID";
+                    else if (selected.Contains("Firstname")) selected = "FName";
+                    FilterDataGridView(selected);
                 }
 
-                dGV_1.DataSource = dT;
+                _FilteredDT = dGV_1.DataSource as DataTable;
             }
-            /*else if ()
+            catch (Exception ex)
             {
-
-            }*/
-            else
-            {
-                string selected = comB_Filter.SelectedItem.ToString();
-                dGV_1.DataSource = fillStudents();
-                if (selected.Contains("Student ID")) selected = "StuID";
-                else if (selected.Contains("Firstname")) selected = "FName";
-                FilterDataGridView(selected);
+                MessageBox.Show(ex.Message, "Student List Print", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            _FilteredDT = dGV_1.DataSource as DataTable;
-
-            //...
         }
 
         private void bttn_Print_Click(object sender, EventArgs e)
         {
-            StuPrinterFrm sPFrm = new StuPrinterFrm();
-            sPFrm._SourceDT = _FilteredDT;
-            sPFrm.ShowDialog();
+            PrinterFrm pFrm = new PrinterFrm();
+            pFrm._SourceDT = _FilteredDT;
+            pFrm._rdlc = "STUDENTs.StuReport";
+            pFrm._getStr = "SELECT * FROM QLSVDB";
+            pFrm._DSName = "dS_StudentList";
+            pFrm._DTName = "Student List";
+            pFrm.ShowDialog();
+            pFrm.Dispose();
         }
     }
 }
@@ -227,6 +236,6 @@ namespace WIPR170124
 
 /* PROBLEMS
  * Filter combine gender & stuID still bug -> print error in rows
- * case where fromName > toName, handle?
+ * case where fromName > toName, handle? - nah
  * 
  */

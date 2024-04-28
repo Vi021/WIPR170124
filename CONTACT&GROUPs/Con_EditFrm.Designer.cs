@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnl_1 = new System.Windows.Forms.Panel();
+            this.lbl_CInfo = new System.Windows.Forms.Label();
             this.picB_Avatar = new System.Windows.Forms.PictureBox();
             this.rTB_Addr = new System.Windows.Forms.RichTextBox();
             this.txtB_Email = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.bttn_Edit = new System.Windows.Forms.Button();
             this.pnl_Shadow = new System.Windows.Forms.Panel();
             this.bttn_Pick = new System.Windows.Forms.Button();
-            this.lbl_CInfo = new System.Windows.Forms.Label();
             this.toolT_Avatar = new System.Windows.Forms.ToolTip(this.components);
             this.erPr_ConID = new System.Windows.Forms.ErrorProvider(this.components);
             this.erPr_Fname = new System.Windows.Forms.ErrorProvider(this.components);
@@ -77,6 +77,17 @@
             this.pnl_1.Name = "pnl_1";
             this.pnl_1.Size = new System.Drawing.Size(366, 54);
             this.pnl_1.TabIndex = 31;
+            // 
+            // lbl_CInfo
+            // 
+            this.lbl_CInfo.AutoSize = true;
+            this.lbl_CInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_CInfo.ForeColor = System.Drawing.Color.White;
+            this.lbl_CInfo.Location = new System.Drawing.Point(101, 15);
+            this.lbl_CInfo.Name = "lbl_CInfo";
+            this.lbl_CInfo.Size = new System.Drawing.Size(164, 24);
+            this.lbl_CInfo.TabIndex = 9;
+            this.lbl_CInfo.Text = "CONTACT INFO";
             // 
             // picB_Avatar
             // 
@@ -270,7 +281,7 @@
             // 
             // bttn_Pick
             // 
-            this.bttn_Pick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.bttn_Pick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.bttn_Pick.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttn_Pick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttn_Pick.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
@@ -282,17 +293,6 @@
             this.bttn_Pick.Text = "Pick";
             this.bttn_Pick.UseVisualStyleBackColor = false;
             this.bttn_Pick.Click += new System.EventHandler(this.bttn_Pick_Click);
-            // 
-            // lbl_CInfo
-            // 
-            this.lbl_CInfo.AutoSize = true;
-            this.lbl_CInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.lbl_CInfo.ForeColor = System.Drawing.Color.White;
-            this.lbl_CInfo.Location = new System.Drawing.Point(101, 15);
-            this.lbl_CInfo.Name = "lbl_CInfo";
-            this.lbl_CInfo.Size = new System.Drawing.Size(164, 24);
-            this.lbl_CInfo.TabIndex = 9;
-            this.lbl_CInfo.Text = "CONTACT INFO";
             // 
             // erPr_ConID
             // 

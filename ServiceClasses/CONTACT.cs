@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Data;
 
 namespace WIPR170124.ServiceClasses
 {
@@ -44,13 +43,17 @@ namespace WIPR170124.ServiceClasses
             string pattern = @"^[\p{L} ]+$";
             return Regex.IsMatch(str, pattern);
         }
-        
-        public bool phone_exist(string phone)
+
+        public bool phone_exist(string phone, string id = "")
         {
             using (SqlConnection conn = new MyDB().Connection)
             {
                 conn.Open();
                 string checkStr = "SELECT COUNT(*) FROM Contacts WHERE Phone = @phone";
+                if (id.Length > 0 && id_exist(Convert.ToInt32(id)))
+                {
+                    checkStr += $" AND ConID <> '{id}'";
+                }
                 using (SqlCommand cmd = new SqlCommand(checkStr, conn))
                 {
                     cmd.Parameters.AddWithValue("@phone", phone);
@@ -115,7 +118,7 @@ namespace WIPR170124.ServiceClasses
 
             return false;
         }
-        
+
         public DataTable GetAContact(int id)
         {
             if (id >= 0)
@@ -130,28 +133,35 @@ namespace WIPR170124.ServiceClasses
                         adapter.Fill(dt);
                     }
                 }
-                
+
                 return dt;
             }
 
             return null;
         }
 
-        public DataTable GetContactsFromGroup(int gid)
+        public DataTable GetContactsFromGroup(int gid, int uid=-1)
         {
             if (gid >= 0)
             {
                 DataTable dt = new DataTable("Contacts");
+                USER user = new USER();
+
+                string getStr = $"SELECT * FROM Contacts WHERE GID = {gid}";
+                if (user.id_exist(uid))
+                {
+                    getStr += $" AND UID = {uid}";
+                }
+
                 using (SqlConnection conn = new MyDB().Connection)
                 {
                     conn.Open();
-                    string getStr = $"SELECT * FROM Contacts WHERE GID = {gid}";
                     using (SqlDataAdapter adapter = new SqlDataAdapter(getStr, conn))
                     {
                         adapter.Fill(dt);
                     }
                 }
-                
+
                 return dt;
             }
 
@@ -201,6 +211,36 @@ namespace WIPR170124.ServiceClasses
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message, "CONTACT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
+        public bool RemoveContact(int id)
+        {
+            if (id >= 0)
+            {
+                try
+                {
+                    using (SqlConnection conn = new MyDB().Connection)
+                    {
+                        conn.Open();
+                        string removeStr = "DELETE FROM Contacts WHERE ConID = @id";
+                        using (SqlCommand cmd = new SqlCommand(removeStr, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", id);
+
+                            if (cmd.ExecuteNonQuery() == 1)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "CONTACT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using WIPR170124.CONTACT_GROUPs;
+using WIPR170124.ServiceClasses;
 
 namespace WIPR170124.CONTACTs_GRORPs
 {
@@ -39,7 +40,7 @@ namespace WIPR170124.CONTACTs_GRORPs
             {
                 try
                 {
-                    using(SqlConnection conn = new MyDB().Connection)
+                    using (SqlConnection conn = new MyDB().Connection)
                     {
                         conn.Open();
                         string getStr = $"SELECT pfp FROM [users] WHERE ID = {id}";
@@ -57,22 +58,41 @@ namespace WIPR170124.CONTACTs_GRORPs
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
+        GROUP group = new GROUP();
         private void CG_MainFrm_Load(object sender, EventArgs e)
         {
             innit_pfp(Program._id);
             lbl_Username.Text = "Welcome, " + Program._username + "!";
+
+            using (SqlConnection conn = new MyDB().Connection)
+            {
+                string getStr = $"SELECT ID, GName FROM Groups WHERE UID = {Program._id}";
+                using (SqlCommand cmd = new SqlCommand(getStr, conn))
+                {
+                    DataTable dt = group.GetGroups(cmd);
+                    comB_GEName.DropDownStyle = ComboBoxStyle.DropDownList;
+                    comB_GEName.DataSource = dt;
+                    comB_GEName.DisplayMember = "GName";
+                    comB_GEName.ValueMember = "ID";
+
+                    comB_GRName.DropDownStyle = ComboBoxStyle.DropDownList;
+                    comB_GRName.DataSource = dt;
+                    comB_GRName.DisplayMember = "GName";
+                    comB_GRName.ValueMember = "ID";
+                }
+            }
         }
 
         private void lbl_Refresh_Click(object sender, EventArgs e)
         {
-            //
+            this.CG_MainFrm_Load(sender, e);
         }
 
         private void lbl_MyInfo_Click(object sender, EventArgs e)
@@ -96,13 +116,35 @@ namespace WIPR170124.CONTACTs_GRORPs
 
         private void bttn_CRemove_Click(object sender, EventArgs e)
         {
-            if (txtB_CAID.Text.Length > 0)
+            CONTACT contact = new CONTACT();
+            if (txtB_CAID.Text.Length > 0 && contact.int_able(txtB_CAID.Text))
             {
-                DialogResult result = MessageBox.Show($"Do you want to delete this Contact: {txtB_CAID.Text}", "Remove", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (result == DialogResult.OK)
+                int id = Convert.ToInt32(txtB_CAID.Text);
+                if (contact.id_exist(id))
                 {
-                    MessageBox.Show("Removed", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    erPr_AllPurpose.SetError(txtB_CAID, "");
+
+                    DialogResult result = MessageBox.Show($"Do you want to delete this Contact: {txtB_CAID.Text}", "Remove", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        if (contact.RemoveContact(id))
+                        {
+                            MessageBox.Show($"Removed Contact: {txtB_CAID.Text}", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Remove failed..", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
+                else
+                {
+                    erPr_AllPurpose.SetError(txtB_CAID, "ID doesn't exist");
+                }
+            }
+            else
+            {
+                erPr_AllPurpose.SetError(txtB_CAID, "Field must contains a number >= 0");
             }
         }
 
@@ -121,12 +163,49 @@ namespace WIPR170124.CONTACTs_GRORPs
 
         private void bttn_GEdit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Edited", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (comB_GEName.SelectedIndex != -1)
+            {
+                if (txtB_GEName.Text.Length > 0)
+                {
+                    erPr_AllPurpose.SetError(txtB_GEName, "");
+                    if (group.EditGroup(Convert.ToInt32(comB_GEName.SelectedValue), txtB_GEName.Text, Program._id))
+                    {
+                        MessageBox.Show("Edited", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Edit failed", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    erPr_AllPurpose.SetError(txtB_GEName, "Field can't be empty");
+                }
+            }
+            else
+            {
+                erPr_AllPurpose.SetError(comB_GEName, "Please select a group");
+            }
         }
 
         private void bttn_GRemove_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Removed", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (comB_GRName.SelectedIndex != -1)
+            {
+                erPr_AllPurpose.SetError(txtB_GEName, "");
+                if (group.RemoveGroup(Convert.ToInt32(comB_GEName.SelectedValue), Program._id))
+                {
+                    MessageBox.Show("Removed", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Remove failed", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                erPr_AllPurpose.SetError(comB_GEName, "Please select a group");
+            }
         }
     }
 }

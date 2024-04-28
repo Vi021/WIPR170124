@@ -45,7 +45,7 @@ namespace WIPR170124.CONTACT_GROUPs
             bool _checked = true;
 
             //Contact ID
-            if (txtB_ConID.Text.Length >= 0 && contact.int_able(txtB_ConID.Text))
+            if (txtB_ConID.Text.Length > 0 && contact.int_able(txtB_ConID.Text))
             {
                 if (!contact.id_exist(Convert.ToInt32(txtB_ConID.Text)))
                 {
@@ -86,7 +86,7 @@ namespace WIPR170124.CONTACT_GROUPs
             }
 
             //Group
-            if (txtB_Group.Text.Length >= 0)
+            if (txtB_Group.Text.Length > 0 && group.int_able(txtB_Group.Text))
             {
                 if (group.id_exist(Convert.ToInt32(txtB_Group.Text)))
                 {
@@ -124,7 +124,7 @@ namespace WIPR170124.CONTACT_GROUPs
             }
 
             //Email
-            if (txtB_Email.Text.Length >= 0)
+            if (txtB_Email.Text.Length > 0)
             {
                 /*if (!contact.id_exist(Convert.ToInt32(txtB_ConID.Text)))
                 {
@@ -147,21 +147,28 @@ namespace WIPR170124.CONTACT_GROUPs
 
         private void bttn_Add_Click(object sender, EventArgs e)
         {
-            if (check())
+            try
             {
-                MemoryStream pic = new MemoryStream();
-                if (picB_Avatar.BackgroundImage != null)
+                if (check())
                 {
-                    picB_Avatar.BackgroundImage.Save(pic, picB_Avatar.BackgroundImage.RawFormat);
-                    if (contact.AddContact(Convert.ToInt32(txtB_ConID.Text), txtB_Fname.Text, txtB_Lname.Text, Convert.ToInt32(txtB_Group.Text), txtB_Phone.Text, txtB_Email.Text, rTB_Address.Text, pic))
+                    MemoryStream pic = new MemoryStream();
+                    if (picB_Avatar.BackgroundImage != null)
                     {
-                        MessageBox.Show("Added!", "Add a Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+                        picB_Avatar.BackgroundImage.Save(pic, picB_Avatar.BackgroundImage.RawFormat);
+                        if (contact.AddContact(Convert.ToInt32(txtB_ConID.Text), txtB_Fname.Text, txtB_Lname.Text, Convert.ToInt32(txtB_Group.Text), txtB_Phone.Text, txtB_Email.Text, rTB_Address.Text, pic))
+                        {
+                            MessageBox.Show("Added!", "Add a Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
                     }
                 }
-            }
 
-            MessageBox.Show("Add failed..", "Add a Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Add failed..", "Add a Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Add a Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_Menu = new System.Windows.Forms.Panel();
             this.lbl_Refresh = new System.Windows.Forms.Label();
             this.lbl_MyInfo = new System.Windows.Forms.Label();
             this.lbl_Username = new System.Windows.Forms.Label();
+            this.picB_Avatar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_Group = new System.Windows.Forms.Label();
             this.lbl_Contact = new System.Windows.Forms.Label();
@@ -58,15 +60,16 @@
             this.lbl_ConID = new System.Windows.Forms.Label();
             this.bttn_CAdd = new System.Windows.Forms.Button();
             this.lbl_Splitter1 = new System.Windows.Forms.Label();
-            this.picB_Avatar = new System.Windows.Forms.PictureBox();
+            this.erPr_AllPurpose = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnl_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnl_Group.SuspendLayout();
             this.grpB_Remove.SuspendLayout();
             this.grpB_Edit.SuspendLayout();
             this.grpB_Add.SuspendLayout();
             this.pnl_Contact.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erPr_AllPurpose)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Menu
@@ -115,6 +118,17 @@
             this.lbl_Username.Size = new System.Drawing.Size(81, 25);
             this.lbl_Username.TabIndex = 2;
             this.lbl_Username.Text = "User01";
+            // 
+            // picB_Avatar
+            // 
+            this.picB_Avatar.BackColor = System.Drawing.Color.Transparent;
+            this.picB_Avatar.BackgroundImage = global::WIPR170124.Properties.Resources.profileIcon;
+            this.picB_Avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picB_Avatar.Location = new System.Drawing.Point(10, 6);
+            this.picB_Avatar.Name = "picB_Avatar";
+            this.picB_Avatar.Size = new System.Drawing.Size(50, 50);
+            this.picB_Avatar.TabIndex = 1;
+            this.picB_Avatar.TabStop = false;
             // 
             // panel2
             // 
@@ -299,11 +313,11 @@
             this.lbl_GAName.AutoSize = true;
             this.lbl_GAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_GAName.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbl_GAName.Location = new System.Drawing.Point(6, 30);
+            this.lbl_GAName.Location = new System.Drawing.Point(34, 30);
             this.lbl_GAName.Name = "lbl_GAName";
-            this.lbl_GAName.Size = new System.Drawing.Size(104, 18);
+            this.lbl_GAName.Size = new System.Drawing.Size(76, 18);
             this.lbl_GAName.TabIndex = 4;
-            this.lbl_GAName.Text = "Group Name";
+            this.lbl_GAName.Text = "Group ID";
             // 
             // txtB_GAID
             // 
@@ -325,7 +339,7 @@
             this.bttn_GAdd.Name = "bttn_GAdd";
             this.bttn_GAdd.Size = new System.Drawing.Size(104, 29);
             this.bttn_GAdd.TabIndex = 7;
-            this.bttn_GAdd.Text = "Add";
+            this.bttn_GAdd.Text = "Add >";
             this.bttn_GAdd.UseVisualStyleBackColor = false;
             this.bttn_GAdd.Click += new System.EventHandler(this.bttn_GAdd_Click);
             // 
@@ -369,7 +383,7 @@
             this.bttn_CRemove.Name = "bttn_CRemove";
             this.bttn_CRemove.Size = new System.Drawing.Size(104, 38);
             this.bttn_CRemove.TabIndex = 4;
-            this.bttn_CRemove.Text = "Remove >";
+            this.bttn_CRemove.Text = "Remove";
             this.bttn_CRemove.UseVisualStyleBackColor = false;
             this.bttn_CRemove.Click += new System.EventHandler(this.bttn_CRemove_Click);
             // 
@@ -434,16 +448,9 @@
             this.lbl_Splitter1.TabIndex = 0;
             this.lbl_Splitter1.Text = "|";
             // 
-            // picB_Avatar
+            // erPr_AllPurpose
             // 
-            this.picB_Avatar.BackColor = System.Drawing.Color.Transparent;
-            this.picB_Avatar.BackgroundImage = global::WIPR170124.Properties.Resources.profileIcon;
-            this.picB_Avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picB_Avatar.Location = new System.Drawing.Point(10, 6);
-            this.picB_Avatar.Name = "picB_Avatar";
-            this.picB_Avatar.Size = new System.Drawing.Size(50, 50);
-            this.picB_Avatar.TabIndex = 1;
-            this.picB_Avatar.TabStop = false;
+            this.erPr_AllPurpose.ContainerControl = this;
             // 
             // CG_MainFrm
             // 
@@ -457,6 +464,7 @@
             this.Load += new System.EventHandler(this.CG_MainFrm_Load);
             this.pnl_Menu.ResumeLayout(false);
             this.pnl_Menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnl_Group.ResumeLayout(false);
@@ -468,7 +476,7 @@
             this.grpB_Add.PerformLayout();
             this.pnl_Contact.ResumeLayout(false);
             this.pnl_Contact.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erPr_AllPurpose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +514,6 @@
         private System.Windows.Forms.ComboBox comB_GEName;
         private System.Windows.Forms.ComboBox comB_GRName;
         private System.Windows.Forms.Label lbl_GRName;
+        private System.Windows.Forms.ErrorProvider erPr_AllPurpose;
     }
 }

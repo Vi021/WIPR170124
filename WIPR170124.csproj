@@ -212,11 +212,11 @@
       <DependentUpon>ImportFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="STUDENTs\StuPrinterFrm.cs">
+    <Compile Include="ServiceForms\PrinterFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="STUDENTs\StuPrinterFrm.Designer.cs">
-      <DependentUpon>StuPrinterFrm.cs</DependentUpon>
+    <Compile Include="ServiceForms\PrinterFrm.Designer.cs">
+      <DependentUpon>PrinterFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="STUDENTs\StuAddFrm.cs">
       <SubType>Form</SubType>
@@ -291,12 +291,6 @@
     </Compile>
     <Compile Include="Log&amp;Reg\ResetPassFrm.Designer.cs">
       <DependentUpon>ResetPassFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="STUDENTs\StuReportFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="STUDENTs\StuReportFrm.Designer.cs">
-      <DependentUpon>StuReportFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="STUDENTs\StuSeacrhFrm.cs">
       <SubType>Form</SubType>
@@ -412,8 +406,8 @@
     <EmbeddedResource Include="ServiceForms\ImportFrm.resx">
       <DependentUpon>ImportFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="STUDENTs\StuPrinterFrm.resx">
-      <DependentUpon>StuPrinterFrm.cs</DependentUpon>
+    <EmbeddedResource Include="ServiceForms\PrinterFrm.resx">
+      <DependentUpon>PrinterFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STUDENTs\StuAddFrm.resx">
       <DependentUpon>StuAddFrm.cs</DependentUpon>

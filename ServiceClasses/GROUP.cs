@@ -8,6 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Data;
+using System.IO;
 
 namespace WIPR170124.ServiceClasses
 {
@@ -80,6 +81,38 @@ namespace WIPR170124.ServiceClasses
             return false;
         }
 
+        public bool EditGroup(int id, string name, int uid)
+        {
+            if (id >= 0 && name.Length > 0 && uid >= 0)
+            {
+                string addStr = "UPDATE Groups SET GName = @name WHERE ID = @id";
+
+                try
+                {
+                    using (SqlConnection conn = new MyDB().Connection)
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(addStr, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", id);
+                            cmd.Parameters.AddWithValue("@name", name);
+
+                            if (cmd.ExecuteNonQuery() == 1)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "GROUP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
+        }
+
         public DataTable GetGroups(SqlCommand cmd)
         {
             DataTable dt = new DataTable("Groups");
@@ -97,6 +130,36 @@ namespace WIPR170124.ServiceClasses
             }
 
             return dt;
+        }
+
+        public bool RemoveGroup(int gid, int uid = -1)
+        {
+            try
+            {
+                using (SqlConnection conn = new MyDB().Connection)
+                {
+                    string removeStr = $"DELETE FROM Groups WHERE ID = {gid}";
+                    if (uid >= 0 && new USER().id_exist(uid))
+                    {
+                        removeStr += $" AND UID = {uid}";
+                    }
+
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(removeStr, conn))
+                    {
+                        if (cmd.ExecuteNonQuery() == 1)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "GROUP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
         }
     }
 }

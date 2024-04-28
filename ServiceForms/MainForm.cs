@@ -601,7 +601,7 @@ namespace WIPR170124
  *    main | -> user -> |
  *         | -> student -> |
  * 
- * request administration for user not student
+ * request administration for who?
  * 
  */
 #endregion

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WIPR170124.ServiceClasses;
 
@@ -30,13 +25,17 @@ namespace WIPR170124.CONTACT_GROUPs
                 this.bttn_Pick_Click(sender, e);
         }
 
-        private Image ByteArrayToImage(byte[] bytes)
+        private Image ByteArrayToImage(byte[] bytes)            // can cause "A generic error occurred in GDI+" when "picB_Avatar.BackgroundImage.Save(pic, picB_Avatar.BackgroundImage.RawFormat);" ?? - cus of "It appears that the memory stream that the object was created on has to be open at the time the object is saved" ??
         {
-            using (MemoryStream ms = new MemoryStream(bytes))
+            if (bytes != null)
             {
-                Image image = Image.FromStream(ms);
-                return image;
+                using (MemoryStream ms = new MemoryStream(bytes))
+                {
+                    Image image = Image.FromStream(ms);
+                    return image;
+                }
             }
+            return null;
         }
 
         private void bttn_Pick_Click(object sender, EventArgs e)
@@ -58,9 +57,20 @@ namespace WIPR170124.CONTACT_GROUPs
                         txtB_Phone.Text = dt.Rows[0]["Phone"].ToString().Trim();
                         txtB_Email.Text = dt.Rows[0]["Email"].ToString().Trim();
                         rTB_Addr.Text = dt.Rows[0]["Address"].ToString().Trim();
-                        byte[] image = dt.Rows[0]["pfp"] as byte[];
-                        picB_Avatar.BackgroundImage = ByteArrayToImage(image);
-                        picB_Avatar.BackgroundImageLayout = ImageLayout.Zoom;
+
+                        byte[] imageBytes = dt.Rows[0]["pfp"] as byte[];
+                        if (imageBytes != null)
+                        {
+                            picB_Avatar.BackgroundImage = null;
+                            MemoryStream ms = new MemoryStream(imageBytes);
+                            Image image = Image.FromStream(ms);
+                            picB_Avatar.BackgroundImage = image;
+                            picB_Avatar.BackgroundImageLayout = ImageLayout.Zoom;
+                        }
+                        else
+                        {
+                            this.picB_Avatar_Click(sender, e);
+                        }
                     }
                 }
                 else
@@ -98,7 +108,7 @@ namespace WIPR170124.CONTACT_GROUPs
             bool _checked = true;
 
             //Contact ID
-            if (txtB_ConID.Text.Length >= 0 && contact.int_able(txtB_ConID.Text))
+            if (txtB_ConID.Text.Length > 0 && contact.int_able(txtB_ConID.Text))
             {
                 if (contact.id_exist(Convert.ToInt32(txtB_ConID.Text)))
                 {
@@ -139,7 +149,7 @@ namespace WIPR170124.CONTACT_GROUPs
             }
 
             //Group
-            if (txtB_Group.Text.Length >= 0)
+            if (txtB_Group.Text.Length > 0 && group.int_able(txtB_Group.Text))
             {
                 if (group.id_exist(Convert.ToInt32(txtB_Group.Text)))
                 {
@@ -158,7 +168,7 @@ namespace WIPR170124.CONTACT_GROUPs
             }
 
             //Phone
-            /*if (txtB_Phone.Text.Length == 10 && contact.int_able(txtB_Phone.Text))
+            if (txtB_Phone.Text.Length == 10 && contact.int_able(txtB_Phone.Text))
             {
                 if (contact.phone_exist(txtB_Phone.Text))
                 {
@@ -174,7 +184,7 @@ namespace WIPR170124.CONTACT_GROUPs
             {
                 erPr_Phone.SetError(txtB_Phone, "Field must contains 10 ditgits");
                 _checked = false;
-            }*/
+            }
 
             //Email
             if (txtB_Email.Text.Length >= 0)
