@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using WIPR170124.CONTACTs_GRORPs;
 using WIPR170124.COURSEs;
 using WIPR170124.GRADEs;
 
@@ -46,14 +47,12 @@ namespace WIPR170124
 
             if (!Admin)
             {
+                mnStrp_1.Items.RemoveAt(5);
                 mnStrp_1.Items.RemoveAt(3);
             }
             else
             {
                 mnStrp_1.Items.RemoveAt(4);
-                mnStrp_1.Items.RemoveAt(2);
-                mnStrp_1.Items.RemoveAt(1);
-                mnStrp_1.Items.RemoveAt(0);
             }
 
             /**/
@@ -428,6 +427,13 @@ namespace WIPR170124
             modAccFrm.ShowDialog();
         }
 
+        // Admin Human Resource
+        private void hUMANRESOURCEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CG_MainFrm cgMFrm = new CG_MainFrm();
+            cgMFrm.ShowDialog();
+        }
+
 
         // USER Enabled
         private void requestsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -595,7 +601,7 @@ namespace WIPR170124
  *    main | -> user -> |
  *         | -> student -> |
  * 
- * request administration for user not student
+ * request administration for who?
  * 
  */
 #endregion

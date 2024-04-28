@@ -1,0 +1,7 @@
+﻿- username/mail - pass login
+	+ user administration request
+- fix import, export
+- print
+- result statistic
+- score average result search button
+- CG my info

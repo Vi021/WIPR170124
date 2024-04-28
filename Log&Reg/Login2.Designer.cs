@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login2));
             this.picB_Logo = new System.Windows.Forms.PictureBox();
             this.bttn_Login = new System.Windows.Forms.Button();
-            this.pctBShowPass = new System.Windows.Forms.PictureBox();
+            this.picB_ShowPass = new System.Windows.Forms.PictureBox();
             this.txtB_Username = new System.Windows.Forms.TextBox();
             this.txtB_Password = new System.Windows.Forms.TextBox();
             this.picB_Avatar = new System.Windows.Forms.PictureBox();
@@ -45,7 +46,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.rBtn_Student = new System.Windows.Forms.RadioButton();
             this.rBtn_HR = new System.Windows.Forms.RadioButton();
-            this.rBtn_ADMIN = new System.Windows.Forms.RadioButton();
+            this.rBtn_Admin = new System.Windows.Forms.RadioButton();
             this.pnl_7 = new System.Windows.Forms.Panel();
             this.pnl_8 = new System.Windows.Forms.Panel();
             this.lbl__gt = new System.Windows.Forms.Label();
@@ -54,8 +55,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lLbl_Register = new System.Windows.Forms.LinkLabel();
             this.lbl__o = new System.Windows.Forms.Label();
+            this.toolT_Type = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picB_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBShowPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_ShowPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).BeginInit();
             this.panel6.SuspendLayout();
             this.pnl_7.SuspendLayout();
@@ -85,25 +87,26 @@
             this.bttn_Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bttn_Login.Name = "bttn_Login";
             this.bttn_Login.Size = new System.Drawing.Size(164, 44);
-            this.bttn_Login.TabIndex = 26;
+            this.bttn_Login.TabIndex = 6;
             this.bttn_Login.Text = "LOG IN >>>";
             this.bttn_Login.UseVisualStyleBackColor = false;
             this.bttn_Login.Click += new System.EventHandler(this.bttn_Login_Click);
             // 
-            // pctBShowPass
+            // picB_ShowPass
             // 
-            this.pctBShowPass.BackColor = System.Drawing.SystemColors.Window;
-            this.pctBShowPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctBShowPass.BackgroundImage")));
-            this.pctBShowPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctBShowPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctBShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctBShowPass.InitialImage = null;
-            this.pctBShowPass.Location = new System.Drawing.Point(368, 139);
-            this.pctBShowPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pctBShowPass.Name = "pctBShowPass";
-            this.pctBShowPass.Size = new System.Drawing.Size(24, 24);
-            this.pctBShowPass.TabIndex = 28;
-            this.pctBShowPass.TabStop = false;
+            this.picB_ShowPass.BackColor = System.Drawing.SystemColors.Window;
+            this.picB_ShowPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picB_ShowPass.BackgroundImage")));
+            this.picB_ShowPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picB_ShowPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picB_ShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picB_ShowPass.InitialImage = null;
+            this.picB_ShowPass.Location = new System.Drawing.Point(368, 139);
+            this.picB_ShowPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picB_ShowPass.Name = "picB_ShowPass";
+            this.picB_ShowPass.Size = new System.Drawing.Size(24, 24);
+            this.picB_ShowPass.TabIndex = 28;
+            this.picB_ShowPass.TabStop = false;
+            this.picB_ShowPass.Click += new System.EventHandler(this.pctBShowPass_Click);
             // 
             // txtB_Username
             // 
@@ -113,7 +116,7 @@
             this.txtB_Username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtB_Username.Name = "txtB_Username";
             this.txtB_Username.Size = new System.Drawing.Size(187, 24);
-            this.txtB_Username.TabIndex = 24;
+            this.txtB_Username.TabIndex = 1;
             // 
             // txtB_Password
             // 
@@ -124,7 +127,7 @@
             this.txtB_Password.Name = "txtB_Password";
             this.txtB_Password.PasswordChar = '*';
             this.txtB_Password.Size = new System.Drawing.Size(187, 24);
-            this.txtB_Password.TabIndex = 23;
+            this.txtB_Password.TabIndex = 2;
             // 
             // picB_Avatar
             // 
@@ -207,7 +210,7 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(129)))));
             this.panel6.Controls.Add(this.rBtn_Student);
             this.panel6.Controls.Add(this.rBtn_HR);
-            this.panel6.Controls.Add(this.rBtn_ADMIN);
+            this.panel6.Controls.Add(this.rBtn_Admin);
             this.panel6.Location = new System.Drawing.Point(12, 392);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(467, 79);
@@ -221,7 +224,7 @@
             this.rBtn_Student.Location = new System.Drawing.Point(23, 33);
             this.rBtn_Student.Name = "rBtn_Student";
             this.rBtn_Student.Size = new System.Drawing.Size(107, 22);
-            this.rBtn_Student.TabIndex = 0;
+            this.rBtn_Student.TabIndex = 3;
             this.rBtn_Student.TabStop = true;
             this.rBtn_Student.Text = "STUDENT";
             this.rBtn_Student.UseVisualStyleBackColor = true;
@@ -234,29 +237,29 @@
             this.rBtn_HR.Location = new System.Drawing.Point(146, 33);
             this.rBtn_HR.Name = "rBtn_HR";
             this.rBtn_HR.Size = new System.Drawing.Size(188, 22);
-            this.rBtn_HR.TabIndex = 0;
+            this.rBtn_HR.TabIndex = 4;
             this.rBtn_HR.TabStop = true;
             this.rBtn_HR.Text = "HUMAN RESOURCE";
             this.rBtn_HR.UseVisualStyleBackColor = true;
             // 
-            // rBtn_ADMIN
+            // rBtn_Admin
             // 
-            this.rBtn_ADMIN.AutoSize = true;
-            this.rBtn_ADMIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBtn_ADMIN.ForeColor = System.Drawing.Color.White;
-            this.rBtn_ADMIN.Location = new System.Drawing.Point(354, 33);
-            this.rBtn_ADMIN.Name = "rBtn_ADMIN";
-            this.rBtn_ADMIN.Size = new System.Drawing.Size(81, 22);
-            this.rBtn_ADMIN.TabIndex = 0;
-            this.rBtn_ADMIN.TabStop = true;
-            this.rBtn_ADMIN.Text = "ADMIN";
-            this.rBtn_ADMIN.UseVisualStyleBackColor = true;
+            this.rBtn_Admin.AutoSize = true;
+            this.rBtn_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBtn_Admin.ForeColor = System.Drawing.Color.White;
+            this.rBtn_Admin.Location = new System.Drawing.Point(354, 33);
+            this.rBtn_Admin.Name = "rBtn_Admin";
+            this.rBtn_Admin.Size = new System.Drawing.Size(81, 22);
+            this.rBtn_Admin.TabIndex = 5;
+            this.rBtn_Admin.TabStop = true;
+            this.rBtn_Admin.Text = "ADMIN";
+            this.rBtn_Admin.UseVisualStyleBackColor = true;
             // 
             // pnl_7
             // 
             this.pnl_7.AutoScroll = true;
             this.pnl_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.pnl_7.Controls.Add(this.pctBShowPass);
+            this.pnl_7.Controls.Add(this.picB_ShowPass);
             this.pnl_7.Controls.Add(this.picB_Avatar);
             this.pnl_7.Controls.Add(this.lbl_Password);
             this.pnl_7.Controls.Add(this.txtB_Username);
@@ -326,7 +329,7 @@
             this.lLbl_Register.Location = new System.Drawing.Point(6, 590);
             this.lLbl_Register.Name = "lLbl_Register";
             this.lLbl_Register.Size = new System.Drawing.Size(173, 18);
-            this.lLbl_Register.TabIndex = 39;
+            this.lLbl_Register.TabIndex = 7;
             this.lLbl_Register.TabStop = true;
             this.lLbl_Register.Text = "New here? Register now!";
             this.lLbl_Register.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -368,7 +371,7 @@
             this.Text = "Login Form";
             this.Load += new System.EventHandler(this.Login2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picB_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBShowPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_ShowPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -387,7 +390,7 @@
 
         private System.Windows.Forms.PictureBox picB_Logo;
         private System.Windows.Forms.Button bttn_Login;
-        private System.Windows.Forms.PictureBox pctBShowPass;
+        private System.Windows.Forms.PictureBox picB_ShowPass;
         private System.Windows.Forms.TextBox txtB_Username;
         private System.Windows.Forms.TextBox txtB_Password;
         private System.Windows.Forms.PictureBox picB_Avatar;
@@ -404,11 +407,12 @@
         private System.Windows.Forms.Panel pnl_9;
         private System.Windows.Forms.RadioButton rBtn_Student;
         private System.Windows.Forms.RadioButton rBtn_HR;
-        private System.Windows.Forms.RadioButton rBtn_ADMIN;
+        private System.Windows.Forms.RadioButton rBtn_Admin;
         private System.Windows.Forms.Label lbl__gt;
         private System.Windows.Forms.Label lbl__lt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel lLbl_Register;
         private System.Windows.Forms.Label lbl__o;
+        private System.Windows.Forms.ToolTip toolT_Type;
     }
 }

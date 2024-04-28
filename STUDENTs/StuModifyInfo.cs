@@ -156,6 +156,7 @@ namespace WIPR170124
                 ErPr_StuID.SetError(but_Find, "This ID does not exist!");
                 return;
             }
+            ErPr_StuID.Clear();
 
             string fname = txtBox_stuFName.Text;
             if (onlyLetters(txtBox_stuFName.Text))
@@ -241,8 +242,9 @@ namespace WIPR170124
                                     }
                                 }
                             }
-                            MessageBox.Show("Modified successfully!", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        
+                        MessageBox.Show("Modified successfully!", "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

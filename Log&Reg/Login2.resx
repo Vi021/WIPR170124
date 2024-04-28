@@ -186,7 +186,7 @@
         5Pv8w8AeAtwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pctBShowPass.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picB_ShowPass.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABeCAYAAADVA7GfAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACpRJREFUeF7tnAWoVE0Ux+3u7u4OULELMRADDFBsFLtQLOxAEQsbE7sVURHFFrvF
@@ -237,4 +237,7 @@
         msEQohkMIZrBEKIZDCGawRCiFYT4D0kyh6O4LoHMAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="toolT_Type.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
