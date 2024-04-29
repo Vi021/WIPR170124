@@ -26,7 +26,7 @@ namespace WIPR170124.STUDENTs
                 {
                     if (_SourceDT != null)
                     {
-                        DataSet dS = new DataSet();
+                        DataSet dS = new DataSet(_DSName);
 
                         dS.Tables.Add(_SourceDT);
 
@@ -43,7 +43,7 @@ namespace WIPR170124.STUDENTs
                     {
                         SqlDataAdapter adapter = new SqlDataAdapter(_getStr, conn);
 
-                        DataSet dS = new DataSet();
+                        DataSet dS = new DataSet(_DSName);
 
                         adapter.Fill(dS, _DTName);
 

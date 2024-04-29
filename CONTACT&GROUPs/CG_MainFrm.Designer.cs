@@ -61,6 +61,17 @@
             this.bttn_CAdd = new System.Windows.Forms.Button();
             this.lbl_Splitter1 = new System.Windows.Forms.Label();
             this.erPr_AllPurpose = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Return = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtB_Username2 = new System.Windows.Forms.TextBox();
+            this.picB_Avatar2 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_GCreated = new System.Windows.Forms.Label();
+            this.lbl_CCreated = new System.Windows.Forms.Label();
             this.pnl_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,11 +81,15 @@
             this.grpB_Add.SuspendLayout();
             this.pnl_Contact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erPr_AllPurpose)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Menu
             // 
             this.pnl_Menu.BackColor = System.Drawing.Color.SlateBlue;
+            this.pnl_Menu.Controls.Add(this.lbl_Return);
             this.pnl_Menu.Controls.Add(this.lbl_Refresh);
             this.pnl_Menu.Controls.Add(this.lbl_MyInfo);
             this.pnl_Menu.Controls.Add(this.lbl_Username);
@@ -124,6 +139,7 @@
             this.picB_Avatar.BackColor = System.Drawing.Color.Transparent;
             this.picB_Avatar.BackgroundImage = global::WIPR170124.Properties.Resources.profileIcon;
             this.picB_Avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picB_Avatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picB_Avatar.Location = new System.Drawing.Point(10, 6);
             this.picB_Avatar.Name = "picB_Avatar";
             this.picB_Avatar.Size = new System.Drawing.Size(50, 50);
@@ -133,12 +149,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.lbl_Group);
             this.panel2.Controls.Add(this.lbl_Contact);
             this.panel2.Controls.Add(this.pnl_Group);
             this.panel2.Controls.Add(this.pnl_Contact);
             this.panel2.Controls.Add(this.lbl_Splitter1);
-            this.panel2.Location = new System.Drawing.Point(-2, 62);
+            this.panel2.Location = new System.Drawing.Point(-1, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(907, 534);
             this.panel2.TabIndex = 1;
@@ -452,6 +469,123 @@
             // 
             this.erPr_AllPurpose.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.picB_Avatar2);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.txtB_Username2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(904, 534);
+            this.panel1.TabIndex = 4;
+            // 
+            // lbl_Return
+            // 
+            this.lbl_Return.AutoSize = true;
+            this.lbl_Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lbl_Return.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Return.Location = new System.Drawing.Point(24, 20);
+            this.lbl_Return.Name = "lbl_Return";
+            this.lbl_Return.Size = new System.Drawing.Size(90, 24);
+            this.lbl_Return.TabIndex = 15;
+            this.lbl_Return.Text = "< Return";
+            this.lbl_Return.Click += new System.EventHandler(this.lbl_Return_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SlateBlue;
+            this.label1.Location = new System.Drawing.Point(351, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Username";
+            // 
+            // txtB_Username2
+            // 
+            this.txtB_Username2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtB_Username2.ForeColor = System.Drawing.Color.SlateBlue;
+            this.txtB_Username2.Location = new System.Drawing.Point(356, 151);
+            this.txtB_Username2.Name = "txtB_Username2";
+            this.txtB_Username2.Size = new System.Drawing.Size(201, 28);
+            this.txtB_Username2.TabIndex = 3;
+            // 
+            // picB_Avatar2
+            // 
+            this.picB_Avatar2.BackColor = System.Drawing.Color.Transparent;
+            this.picB_Avatar2.BackgroundImage = global::WIPR170124.Properties.Resources.profileIcon;
+            this.picB_Avatar2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picB_Avatar2.Location = new System.Drawing.Point(163, 68);
+            this.picB_Avatar2.Name = "picB_Avatar2";
+            this.picB_Avatar2.Size = new System.Drawing.Size(180, 180);
+            this.picB_Avatar2.TabIndex = 1;
+            this.picB_Avatar2.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel3.Controls.Add(this.lbl_CCreated);
+            this.panel3.Controls.Add(this.lbl_GCreated);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(293, 195);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(451, 234);
+            this.panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel4.Location = new System.Drawing.Point(240, 145);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(116, 116);
+            this.panel4.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(66, -13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(382, 58);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "---------------------";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel5.Location = new System.Drawing.Point(161, 66);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(184, 184);
+            this.panel5.TabIndex = 6;
+            // 
+            // lbl_GCreated
+            // 
+            this.lbl_GCreated.AutoSize = true;
+            this.lbl_GCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GCreated.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_GCreated.Location = new System.Drawing.Point(34, 155);
+            this.lbl_GCreated.Name = "lbl_GCreated";
+            this.lbl_GCreated.Size = new System.Drawing.Size(186, 25);
+            this.lbl_GCreated.TabIndex = 14;
+            this.lbl_GCreated.Text = "+ Groups created:";
+            // 
+            // lbl_CCreated
+            // 
+            this.lbl_CCreated.AutoSize = true;
+            this.lbl_CCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CCreated.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_CCreated.Location = new System.Drawing.Point(34, 101);
+            this.lbl_CCreated.Name = "lbl_CCreated";
+            this.lbl_CCreated.Size = new System.Drawing.Size(202, 25);
+            this.lbl_CCreated.TabIndex = 14;
+            this.lbl_CCreated.Text = "+ Contacts created:";
+            // 
             // CG_MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -477,6 +611,11 @@
             this.pnl_Contact.ResumeLayout(false);
             this.pnl_Contact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erPr_AllPurpose)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -515,5 +654,16 @@
         private System.Windows.Forms.ComboBox comB_GRName;
         private System.Windows.Forms.Label lbl_GRName;
         private System.Windows.Forms.ErrorProvider erPr_AllPurpose;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_Return;
+        private System.Windows.Forms.TextBox txtB_Username2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picB_Avatar2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_CCreated;
+        private System.Windows.Forms.Label lbl_GCreated;
     }
 }

@@ -2,6 +2,7 @@
 	+ user administration request
 - fix import, export
 - print
-- result statistic
 - score average result search button
-- CG my info
+- result print student scores
+- admin
+- click teacher -> show list courses and score of each course

@@ -84,13 +84,13 @@ namespace WIPR170124
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new StuPrintFrm());
+            //Application.Run(new StuPrintFrm());
 
             //Application.Run(new StuModifyInfo());
 
-            /*MainForm mFrm = new MainForm();
+            MainForm mFrm = new MainForm();
             mFrm.setAdState = false;
-            Application.Run(mFrm);*/
+            Application.Run(mFrm);
 
             //Application.Run(new CONTACTs_GRORPs.CG_MainFrm());
 
