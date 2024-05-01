@@ -294,7 +294,6 @@ namespace WIPR170124.GRADEs
                     gGCFrm.Sem = Convert.ToInt32(dGV_List.CurrentRow.Cells["Sem"].Value.ToString());
                     gGCFrm.Grade = (float)Convert.ToDouble(dGV_List.CurrentRow.Cells["Grade"].Value.ToString());
                     gGCFrm.ShowDialog();
-                    gGCFrm.Dispose();
 
                     this.comB_ID_SelectedIndexChanged(sender, e);
                     return;
@@ -310,7 +309,6 @@ namespace WIPR170124.GRADEs
                     gGCFrm.Sem = Convert.ToInt32(dGV_List.CurrentRow.Cells["Sem"].Value.ToString());
                     gGCFrm.Grade = (float)Convert.ToDouble(dGV_List.CurrentRow.Cells["Grade"].Value.ToString());
                     gGCFrm.ShowDialog();
-                    gGCFrm.Dispose();
 
                     this.comB_ID_SelectedIndexChanged(sender, e);
                     return;

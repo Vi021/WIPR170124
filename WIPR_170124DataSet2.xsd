@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WIPR_170124DataSet2" targetNamespace="http://tempuri.org/WIPR_170124DataSet2.xsd" xmlns:mstns="http://tempuri.org/WIPR_170124DataSet2.xsd" xmlns="http://tempuri.org/WIPR_170124DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WIPR_170124ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WIPR_170124ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WIPR170124.Properties.Settings.GlobalReference.Default.WIPR_170124ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ASRTableAdapter" GeneratorDataComponentClassName="ASRTableAdapter" Name="ASR" UserDataComponentName="ASRTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WIPR_170124ConnectionString (Settings)" DbObjectName="WIPR_170124.dbo.ASR" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT StudentID, Lastname, Firstname, C01, C02, C03, C04, C05, C06, C07, C08, Average, Result FROM dbo.ASR</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StudentID" DataSetColumn="StudentID" />
+              <Mapping SourceColumn="Lastname" DataSetColumn="Lastname" />
+              <Mapping SourceColumn="Firstname" DataSetColumn="Firstname" />
+              <Mapping SourceColumn="C01" DataSetColumn="C01" />
+              <Mapping SourceColumn="C02" DataSetColumn="C02" />
+              <Mapping SourceColumn="C03" DataSetColumn="C03" />
+              <Mapping SourceColumn="C04" DataSetColumn="C04" />
+              <Mapping SourceColumn="C05" DataSetColumn="C05" />
+              <Mapping SourceColumn="C06" DataSetColumn="C06" />
+              <Mapping SourceColumn="C07" DataSetColumn="C07" />
+              <Mapping SourceColumn="C08" DataSetColumn="C08" />
+              <Mapping SourceColumn="Average" DataSetColumn="Average" />
+              <Mapping SourceColumn="Result" DataSetColumn="Result" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WIPR_170124DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="WIPR_170124DataSet2" msprop:Generator_DataSetName="WIPR_170124DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ASR" msprop:Generator_RowEvHandlerName="ASRRowChangeEventHandler" msprop:Generator_RowDeletedName="ASRRowDeleted" msprop:Generator_RowDeletingName="ASRRowDeleting" msprop:Generator_RowEvArgName="ASRRowChangeEvent" msprop:Generator_TablePropName="ASR" msprop:Generator_RowChangedName="ASRRowChanged" msprop:Generator_RowChangingName="ASRRowChanging" msprop:Generator_TableClassName="ASRDataTable" msprop:Generator_RowClassName="ASRRow" msprop:Generator_TableVarName="tableASR" msprop:Generator_UserTableName="ASR">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_UserColumnName="StudentID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lastname" msprop:Generator_ColumnPropNameInRow="Lastname" msprop:Generator_ColumnPropNameInTable="LastnameColumn" msprop:Generator_ColumnVarNameInTable="columnLastname" msprop:Generator_UserColumnName="Lastname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Firstname" msprop:Generator_ColumnPropNameInRow="Firstname" msprop:Generator_ColumnPropNameInTable="FirstnameColumn" msprop:Generator_ColumnVarNameInTable="columnFirstname" msprop:Generator_UserColumnName="Firstname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="C01" msprop:Generator_ColumnPropNameInRow="C01" msprop:Generator_ColumnPropNameInTable="C01Column" msprop:Generator_ColumnVarNameInTable="columnC01" msprop:Generator_UserColumnName="C01" type="xs:double" minOccurs="0" />
+              <xs:element name="C02" msprop:Generator_ColumnPropNameInRow="C02" msprop:Generator_ColumnPropNameInTable="C02Column" msprop:Generator_ColumnVarNameInTable="columnC02" msprop:Generator_UserColumnName="C02" type="xs:double" minOccurs="0" />
+              <xs:element name="C03" msprop:Generator_ColumnPropNameInRow="C03" msprop:Generator_ColumnPropNameInTable="C03Column" msprop:Generator_ColumnVarNameInTable="columnC03" msprop:Generator_UserColumnName="C03" type="xs:double" minOccurs="0" />
+              <xs:element name="C04" msprop:Generator_ColumnPropNameInRow="C04" msprop:Generator_ColumnPropNameInTable="C04Column" msprop:Generator_ColumnVarNameInTable="columnC04" msprop:Generator_UserColumnName="C04" type="xs:double" minOccurs="0" />
+              <xs:element name="C05" msprop:Generator_ColumnPropNameInRow="C05" msprop:Generator_ColumnPropNameInTable="C05Column" msprop:Generator_ColumnVarNameInTable="columnC05" msprop:Generator_UserColumnName="C05" type="xs:double" minOccurs="0" />
+              <xs:element name="C06" msprop:Generator_ColumnPropNameInRow="C06" msprop:Generator_ColumnPropNameInTable="C06Column" msprop:Generator_ColumnVarNameInTable="columnC06" msprop:Generator_UserColumnName="C06" type="xs:double" minOccurs="0" />
+              <xs:element name="C07" msprop:Generator_ColumnPropNameInRow="C07" msprop:Generator_ColumnPropNameInTable="C07Column" msprop:Generator_ColumnVarNameInTable="columnC07" msprop:Generator_UserColumnName="C07" type="xs:double" minOccurs="0" />
+              <xs:element name="C08" msprop:Generator_ColumnPropNameInRow="C08" msprop:Generator_ColumnPropNameInTable="C08Column" msprop:Generator_ColumnVarNameInTable="columnC08" msprop:Generator_UserColumnName="C08" type="xs:double" minOccurs="0" />
+              <xs:element name="Average" msprop:Generator_ColumnPropNameInRow="Average" msprop:Generator_ColumnPropNameInTable="AverageColumn" msprop:Generator_ColumnVarNameInTable="columnAverage" msprop:Generator_UserColumnName="Average" type="xs:double" minOccurs="0" />
+              <xs:element name="Result" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_UserColumnName="Result" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ASR" />
+      <xs:field xpath="mstns:StudentID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -54,7 +54,7 @@ namespace WIPR170124.GRADEs
                     if (g.UpdateGrade(StuID, CID, Sem, grade))
                     {
                         Grade = grade;
-                        this.Gra_GradeCellFrm_Load(sender, e);
+                        this.Close();
                     }
                     else
                     {
@@ -85,7 +85,7 @@ namespace WIPR170124.GRADEs
                     GRADE g = new GRADE();
                     if (g.RemoveGrade(StuID, CID, Sem))
                     {
-                        this.Gra_GradeCellFrm_Load(sender, e);
+                        this.Close();
                     }
                     else
                     {

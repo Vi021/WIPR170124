@@ -50,7 +50,7 @@
             this.lbl_SName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbl_SName.Location = new System.Drawing.Point(45, 80);
             this.lbl_SName.Name = "lbl_SName";
-            this.lbl_SName.Size = new System.Drawing.Size(126, 22);
+            this.lbl_SName.Size = new System.Drawing.Size(103, 18);
             this.lbl_SName.TabIndex = 0;
             this.lbl_SName.Text = "Student name:";
             // 
@@ -60,7 +60,7 @@
             this.lbl_CName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbl_CName.Location = new System.Drawing.Point(51, 117);
             this.lbl_CName.Name = "lbl_CName";
-            this.lbl_CName.Size = new System.Drawing.Size(122, 22);
+            this.lbl_CName.Size = new System.Drawing.Size(102, 18);
             this.lbl_CName.TabIndex = 0;
             this.lbl_CName.Text = "Course name:";
             // 
@@ -70,7 +70,7 @@
             this.lbl_Sem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbl_Sem.Location = new System.Drawing.Point(77, 154);
             this.lbl_Sem.Name = "lbl_Sem";
-            this.lbl_Sem.Size = new System.Drawing.Size(91, 22);
+            this.lbl_Sem.Size = new System.Drawing.Size(76, 18);
             this.lbl_Sem.TabIndex = 0;
             this.lbl_Sem.Text = "Semester:";
             // 
@@ -80,7 +80,7 @@
             this.lbl_Grade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbl_Grade.Location = new System.Drawing.Point(101, 191);
             this.lbl_Grade.Name = "lbl_Grade";
-            this.lbl_Grade.Size = new System.Drawing.Size(65, 22);
+            this.lbl_Grade.Size = new System.Drawing.Size(53, 18);
             this.lbl_Grade.TabIndex = 0;
             this.lbl_Grade.Text = "Grade:";
             // 
@@ -88,28 +88,28 @@
             // 
             this.txtB_SName.Location = new System.Drawing.Point(177, 79);
             this.txtB_SName.Name = "txtB_SName";
-            this.txtB_SName.Size = new System.Drawing.Size(241, 26);
+            this.txtB_SName.Size = new System.Drawing.Size(241, 23);
             this.txtB_SName.TabIndex = 1;
             // 
             // txtB_CName
             // 
             this.txtB_CName.Location = new System.Drawing.Point(177, 116);
             this.txtB_CName.Name = "txtB_CName";
-            this.txtB_CName.Size = new System.Drawing.Size(241, 26);
+            this.txtB_CName.Size = new System.Drawing.Size(241, 23);
             this.txtB_CName.TabIndex = 1;
             // 
             // txtB_Sem
             // 
             this.txtB_Sem.Location = new System.Drawing.Point(177, 153);
             this.txtB_Sem.Name = "txtB_Sem";
-            this.txtB_Sem.Size = new System.Drawing.Size(63, 26);
+            this.txtB_Sem.Size = new System.Drawing.Size(63, 23);
             this.txtB_Sem.TabIndex = 1;
             // 
             // txtB_Grade
             // 
             this.txtB_Grade.Location = new System.Drawing.Point(177, 190);
             this.txtB_Grade.Name = "txtB_Grade";
-            this.txtB_Grade.Size = new System.Drawing.Size(112, 26);
+            this.txtB_Grade.Size = new System.Drawing.Size(112, 23);
             this.txtB_Grade.TabIndex = 1;
             // 
             // lbl_Info
@@ -118,7 +118,7 @@
             this.lbl_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbl_Info.Location = new System.Drawing.Point(161, 27);
             this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(149, 26);
+            this.lbl_Info.Size = new System.Drawing.Size(126, 24);
             this.lbl_Info.TabIndex = 2;
             this.lbl_Info.Text = "SCORE INFO";
             // 
@@ -148,8 +148,9 @@
             // 
             // Gra_GradeCellFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(470, 310);
             this.Controls.Add(this.bttn_Remove);
             this.Controls.Add(this.bttn_Edit);
