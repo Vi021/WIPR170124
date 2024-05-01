@@ -144,11 +144,6 @@
     <Compile Include="COURSEs\Cou_StuListFrm.Designer.cs">
       <DependentUpon>Cou_StuListFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GRADEs\dS_AvgScoreResult.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dS_AvgScoreResult.xsd</DependentUpon>
-    </Compile>
     <Compile Include="GRADEs\Gra_AddFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +343,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WIPR_170124DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_EditFrm.resx">
       <DependentUpon>Con_EditFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,17 +475,6 @@
     <EmbeddedResource Include="STUDENTs\StuStatisticFrm.resx">
       <DependentUpon>StuStatisticFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GRADEs\dS_AvgScoreResult.xsc">
-      <DependentUpon>dS_AvgScoreResult.xsd</DependentUpon>
-    </None>
-    <None Include="GRADEs\dS_AvgScoreResult.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dS_AvgScoreResult.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="GRADEs\dS_AvgScoreResult.xss">
-      <DependentUpon>dS_AvgScoreResult.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WIPR170124.GRADEs.dS_AvgScoreResult.datasource" />
     <None Include="Properties\DataSources\WIPR170124.GRADEs.Gra_GraAvgResultFrm.datasource" />
@@ -508,6 +497,17 @@
     </None>
     <None Include="WIPR_170124DataSet.xss">
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124DataSet2.xsc">
+      <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WIPR_170124DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WIPR_170124DataSet2.xss">
+      <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

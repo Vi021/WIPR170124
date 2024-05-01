@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using Microsoft.ReportingServices.Diagnostics.Internal;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,7 +11,7 @@ namespace WIPR170124.GRADEs
 {
     public partial class Gra_GraAvgResultFrm : Form
     {
-        private DataTable baseTable = new DataTable("Average Score Result");
+        internal DataTable baseTable = new DataTable("Average Score Result");
 
         public Gra_GraAvgResultFrm()
         {
@@ -54,7 +55,7 @@ namespace WIPR170124.GRADEs
 
         STUDENT stu = new STUDENT();
         Dictionary<string, List<float>> forCalRes = new Dictionary<string, List<float>>();
-        private void Filler()
+        internal void Filler()
         {
             if (dGV_Result.Columns.Count > 0)
             {
@@ -220,27 +221,15 @@ namespace WIPR170124.GRADEs
             }*/
         }
 
-        private DataTable toDataTable(DataGridView dgv)
-        {
-            DataTable dt = (dgv.DataSource as DataTable).Copy();
-
-            foreach (var row in dgv.Rows)
-            {
-                dt.Rows.Add(row);
-            }
-
-            return dt;
-        }
-
         private void Filler2(string searchStr)
         {
             try
             {
                 if (dGV_Result.Rows.Count > 0)
                 {
-                    if (baseTable.AsEnumerable().Any(row => row["StuID"].ToString().Contains(searchStr) || row["FName"].ToString().Contains(searchStr)))
+                    if (baseTable.AsEnumerable().Any(row => row["StudentID"].ToString().Contains(searchStr) || row["Firstname"].ToString().Contains(searchStr)))
                     {
-                        dGV_Result.DataSource = baseTable.AsEnumerable().Where(row => row["StuID"].ToString().Contains(searchStr) || row["FName"].ToString().Contains(searchStr)).CopyToDataTable();
+                        dGV_Result.DataSource = baseTable.AsEnumerable().Where(row => row["StudentID"].ToString().Contains(searchStr) || row["Firstname"].ToString().Contains(searchStr)).CopyToDataTable();
                     }
                     else
                     {
@@ -258,13 +247,44 @@ namespace WIPR170124.GRADEs
             }
         }
 
+        private void load()
+        {
+            try
+            {
+                using (SqlConnection conn = new MyDB().Connection)
+                {
+                    conn.Open();
+                    string getStr = "SELECT * FROM ASR";
+                    using (SqlDataAdapter adpt = new SqlDataAdapter(getStr, conn))
+                    {
+                        adpt.Fill(baseTable);
+                        dGV_Result.DataSource = baseTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         private void Gra_GraAvgResultFrm_Load(object sender, EventArgs e)
         {
             txtB_StuID.Enabled = false;
             txtB_FName.Enabled = false;
             txtB_LName.Enabled = false;
 
-            Filler();
+            //Filler();
+            load();
+            dGV_Result.DefaultCellStyle.Format = "N2";
+            dGV_Result.Columns["C01"].HeaderText = "Lap trinh tren Window";
+            dGV_Result.Columns["C02"].HeaderText = "Ky thuat lap trinh";
+            dGV_Result.Columns["C03"].HeaderText = "Co so du lieu";
+            dGV_Result.Columns["C04"].HeaderText = "He dieu hanh";
+            dGV_Result.Columns["C05"].HeaderText = "Dai so tuyen tinh";
+            dGV_Result.Columns["C06"].HeaderText = "Vat ly 1";
+            dGV_Result.Columns["C07"].HeaderText = "The chat 2";
+            dGV_Result.Columns["C08"].HeaderText = "Toan 1";
         }
 
         private void dGV_Result_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -273,7 +293,7 @@ namespace WIPR170124.GRADEs
             {
                 if (dGV_Result.Columns.Count > 0)
                 {
-                    txtB_StuID.Text = dGV_Result.CurrentRow.Cells["Student ID"].Value.ToString().Trim();
+                    txtB_StuID.Text = dGV_Result.CurrentRow.Cells["StudentID"].Value.ToString().Trim();
                     txtB_LName.Text = dGV_Result.CurrentRow.Cells["Lastname"].Value.ToString().Trim();
                     txtB_FName.Text = dGV_Result.CurrentRow.Cells["Firstname"].Value.ToString().Trim();
                 }
@@ -297,15 +317,112 @@ namespace WIPR170124.GRADEs
             }
         }
 
+        /*bool CheckIfTableExists(string tableName, SqlConnection connection)
+        {
+            // SQL query to check if the table exists
+            string query = "IF OBJECT_ID('" + tableName + "', 'U') IS NOT NULL SELECT 1 ELSE SELECT 0";
+
+            // Execute the query
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                return Convert.ToInt32(command.ExecuteScalar()) == 1;
+            }
+        }
+
+        void CreateTableFromDataTable(string tableName, DataTable dataTable, SqlConnection connection)
+        {
+            // SQL query to create table based on DataTable structure
+            string createTableQuery = "CREATE TABLE " + tableName + " (";
+
+            // Add columns from DataTable to createTableQuery
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                createTableQuery += column.ColumnName + " VARCHAR(MAX), "; // Adjust data types as needed
+            }
+
+            // Remove the trailing comma and space
+            createTableQuery = createTableQuery.TrimEnd(',', ' ') + ")";
+
+            // Execute the query to create the table
+            using (SqlCommand command = new SqlCommand(createTableQuery, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        public void toSQlTable()
+        {
+            // Assuming dataTable is your dynamically changing DataTable
+            DataTable dataTable = GetDynamicDataTable(); // Get your dynamic DataTable
+
+            // Connect to your SQL database
+            using (SqlConnection connection = new MyDB().Connection)
+            {
+                connection.Open();
+
+                // Check if the SQL table exists
+                bool sqlTableExists = CheckIfTableExists(tableName, connection);
+
+                // If the SQL table does not exist, create it based on the DataTable structure
+                if (!sqlTableExists)
+                {
+                    CreateTableFromDataTable(tableName, dataTable, connection);
+                }
+                else
+                {
+                    // Compare the structure of the SQL table with the DataTable
+                    CompareTableStructureAndUpdate(tableName, dataTable, connection);
+                }
+
+                // Transfer data from the DataTable to the SQL table
+                TransferDataToSqlTable(dataTable, tableName, connection);
+            }
+
+        }*/
+
+        public DataTable toSqlTable()
+        {
+            //https://stackoverflow.com/a/13624935
+
+            SqlConnection con = new MyDB().Connection;
+
+            con.Open();
+
+            string sql = "CREATE TABLE [ASR] (";
+            foreach (DataColumn column in baseTable.Columns)
+            {
+                sql += "[" + column.ColumnName + "] " + "nvarchar(50)" + ",";
+            }
+            sql = sql.TrimEnd(new char[] { ',' }) + ")";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            cmd.ExecuteNonQuery();
+
+            DataTable dT = new DataTable();
+            using (var adapter = new SqlDataAdapter("SELECT * FROM [ASR]", con))
+            using (var builder = new SqlCommandBuilder(adapter))
+            {
+                adapter.InsertCommand = builder.GetInsertCommand();
+                adapter.Update(dT);
+                // adapter.Update(ds.Tables[0]); (Incase u have a data-set)
+            }
+            con.Close();
+
+            return dT;
+        }
+
         private void bttn_Print_Click(object sender, EventArgs e)
         {
-            dS_AvgScoreResult dS_ASR = new dS_AvgScoreResult();
-            dS_ASR.DataSetName = "dS_AvgScoreResult";
-            dS_ASR.Tables.Add(dGV_Result.DataSource as DataTable);
+            /*DataSet dS = new DataSet();
+            dS.DataSetName = "dS_ASR";
+            dS.Tables.Add(dGV_Result.DataSource as DataTable);*/
 
             PrinterFrm printer = new PrinterFrm();
             printer._SourceDT = dGV_Result.DataSource as DataTable;
-            printer._DSName = "dS_AvgScoreResult";
+            printer._DSName = "dS_ASR";
             printer._DTName = (dGV_Result.DataSource as DataTable).TableName;
             printer._rdlc = "GRADEs.AvgScoreResult";
             printer.ShowDialog();
