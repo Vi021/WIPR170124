@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnStrp_1 = new System.Windows.Forms.MenuStrip();
             this.sTUDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,11 +63,11 @@
             this.requestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oTHERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.requestForAdministrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hUMANRESOURCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlTp_1 = new System.Windows.Forms.ToolTip(this.components);
             this.dGV_Accounts = new System.Windows.Forms.DataGridView();
             this.bttn_Done = new System.Windows.Forms.Button();
             this.pnl_Header = new System.Windows.Forms.Panel();
-            this.hUMANRESOURCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnStrp_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Accounts)).BeginInit();
             this.SuspendLayout();
@@ -335,6 +335,13 @@
             this.requestForAdministrationToolStripMenuItem.Text = "Request for Administration";
             this.requestForAdministrationToolStripMenuItem.Click += new System.EventHandler(this.requestForAdministrationToolStripMenuItem_Click);
             // 
+            // hUMANRESOURCEToolStripMenuItem
+            // 
+            this.hUMANRESOURCEToolStripMenuItem.Name = "hUMANRESOURCEToolStripMenuItem";
+            this.hUMANRESOURCEToolStripMenuItem.Size = new System.Drawing.Size(184, 29);
+            this.hUMANRESOURCEToolStripMenuItem.Text = "HUMAN RESOURCE";
+            this.hUMANRESOURCEToolStripMenuItem.Click += new System.EventHandler(this.hUMANRESOURCEToolStripMenuItem_Click);
+            // 
             // dGV_Accounts
             // 
             this.dGV_Accounts.AllowUserToAddRows = false;
@@ -343,23 +350,23 @@
             this.dGV_Accounts.AllowUserToResizeRows = false;
             this.dGV_Accounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Accounts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_Accounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Accounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Accounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_Accounts.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGV_Accounts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Accounts.Location = new System.Drawing.Point(11, 45);
             this.dGV_Accounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGV_Accounts.Name = "dGV_Accounts";
@@ -367,6 +374,7 @@
             this.dGV_Accounts.RowHeadersVisible = false;
             this.dGV_Accounts.RowHeadersWidth = 62;
             this.dGV_Accounts.RowTemplate.Height = 28;
+            this.dGV_Accounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGV_Accounts.Size = new System.Drawing.Size(881, 423);
             this.dGV_Accounts.TabIndex = 1;
             this.dGV_Accounts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Accounts_CellDoubleClick);
@@ -390,13 +398,6 @@
             this.pnl_Header.Name = "pnl_Header";
             this.pnl_Header.Size = new System.Drawing.Size(916, 40);
             this.pnl_Header.TabIndex = 3;
-            // 
-            // hUMANRESOURCEToolStripMenuItem
-            // 
-            this.hUMANRESOURCEToolStripMenuItem.Name = "hUMANRESOURCEToolStripMenuItem";
-            this.hUMANRESOURCEToolStripMenuItem.Size = new System.Drawing.Size(184, 29);
-            this.hUMANRESOURCEToolStripMenuItem.Text = "HUMAN RESOURCE";
-            this.hUMANRESOURCEToolStripMenuItem.Click += new System.EventHandler(this.hUMANRESOURCEToolStripMenuItem_Click);
             // 
             // MainForm
             // 

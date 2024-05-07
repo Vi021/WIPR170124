@@ -56,6 +56,7 @@
             this.lLbl_Register = new System.Windows.Forms.LinkLabel();
             this.lbl__o = new System.Windows.Forms.Label();
             this.toolT_Type = new System.Windows.Forms.ToolTip(this.components);
+            this.erPr_1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picB_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picB_ShowPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Avatar)).BeginInit();
@@ -63,6 +64,7 @@
             this.pnl_7.SuspendLayout();
             this.pnl_8.SuspendLayout();
             this.pnl_9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erPr_1)).BeginInit();
             this.SuspendLayout();
             // 
             // picB_Logo
@@ -346,6 +348,10 @@
             this.lbl__o.TabIndex = 40;
             this.lbl__o.Text = "--------------------";
             // 
+            // erPr_1
+            // 
+            this.erPr_1.ContainerControl = this;
+            // 
             // Login2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +387,7 @@
             this.pnl_8.PerformLayout();
             this.pnl_9.ResumeLayout(false);
             this.pnl_9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erPr_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +421,6 @@
         private System.Windows.Forms.LinkLabel lLbl_Register;
         private System.Windows.Forms.Label lbl__o;
         private System.Windows.Forms.ToolTip toolT_Type;
+        private System.Windows.Forms.ErrorProvider erPr_1;
     }
 }

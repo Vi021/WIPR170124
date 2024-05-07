@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using WIPR170124.CONTACTs_GRORPs;
 using WIPR170124.COURSEs;
 using WIPR170124.GRADEs;
+using WIPR170124.ServiceForms;
 
 namespace WIPR170124
 {
@@ -36,6 +38,7 @@ namespace WIPR170124
         {
             tlTp_1.SetToolTip(mnStrp_1, "Utilities");
 
+            accounToolStripMenuItem.Text = "Users";
             requestsToolStripMenuItem.Enabled = false;
             requestsToolStripMenuItem.Visible = false;
 
@@ -48,6 +51,7 @@ namespace WIPR170124
             if (!Admin)
             {
                 mnStrp_1.Items.RemoveAt(5);
+                mnStrp_1.Items.RemoveAt(4);
                 mnStrp_1.Items.RemoveAt(3);
             }
             else
@@ -298,7 +302,7 @@ namespace WIPR170124
         // SCORE Print
         private void printToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
 
         // SCORE Result: Score Average Result
@@ -331,7 +335,7 @@ namespace WIPR170124
             }
         }
 
-        // ADMIN Account
+        // ADMIN Accounts/Users
         private void accounToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dGV_Accounts.Enabled = true;
@@ -342,7 +346,8 @@ namespace WIPR170124
 
             try
             {
-                ACCOUNT acc = new ACCOUNT();
+                // Mail account
+                /*ACCOUNT acc = new ACCOUNT();
                 MyDB myDB = new MyDB();
 
                 using (SqlConnection conn = myDB.Connection)
@@ -382,6 +387,57 @@ namespace WIPR170124
                             }
                         }
                     }
+                }*/
+
+                // User (Student, HR)
+                using (SqlConnection conn = new MyDB().Connection)
+                {
+                    string getStr = "SELECT ID, [username] as Username, type as Type, active as Active, request as req FROM [users]";
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(getStr, conn))
+                    {
+                        DataTable dT = new DataTable();
+
+                        int rows_added = adapter.Fill(dT);
+
+                        dGV_Accounts.DataSource = null;
+                        dGV_Accounts.Columns.Clear();
+
+                        if (rows_added <= 0)
+                        {
+                            return;
+                        }
+
+                        dGV_Accounts.DataSource = dT;
+                        dGV_Accounts.Columns["req"].Visible = false;
+
+                        DataGridViewTextBoxColumn tBCol = new DataGridViewTextBoxColumn();
+                        tBCol.Name = "Request";
+
+                        dGV_Accounts.Columns.Add(tBCol);
+
+                        int count = dGV_Accounts.Rows.Count;
+                        for (int i = 0; i < count; i++)
+                        {
+                            if ((int)dGV_Accounts.Rows[i].Cells["ID"].Value == Program._id)
+                            {
+                                for (int j = 0; j < dGV_Accounts.Columns.Count; j++)
+                                {
+                                    dGV_Accounts.Rows[i].Cells[j].Style.BackColor = Color.FromArgb(194, 225, 132);
+                                }
+                            }
+
+                            bool request = (bool)dGV_Accounts.Rows[i].Cells["req"].Value;
+                            if (request)
+                            {
+                                dGV_Accounts.Rows[i].Cells["Request"].Value = "Account activation";
+                                dGV_Accounts.Rows[i].Cells["Request"].Style.Font = new System.Drawing.Font(dGV_Accounts.Font, System.Drawing.FontStyle.Bold);
+                            }
+                            else
+                            {
+                                dGV_Accounts.Rows[i].Cells["Request"].Value = "None";
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception exc)
@@ -390,13 +446,16 @@ namespace WIPR170124
             }
         }
 
-        // ADMIN Manage accounts
+        // ADMIN Manage Accounts/Users
         private void dGV_Accounts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ModifyAccounts modAccFrm = new ModifyAccounts();
 
             if (dGV_Accounts.DataSource != null && dGV_Accounts.Columns != null)
             {
+
+                // Accounts
+                /*ModifyAccounts modAccFrm = new ModifyAccounts();
+
                 //Email
                 modAccFrm.lbl_Email.Text = "Email: " + dGV_Accounts.CurrentRow.Cells["Email"].Value.ToString().Trim();
                 modAccFrm.email = dGV_Accounts.CurrentRow.Cells["Email"].Value.ToString();
@@ -422,9 +481,26 @@ namespace WIPR170124
                 }
                 //Request
                 modAccFrm.lbl_Request.Text = "Request:   " + dGV_Accounts.CurrentRow.Cells["Request for"].Value.ToString().Trim();
-            }
 
-            modAccFrm.ShowDialog();
+                modAccFrm.ShowDialog();*/
+            
+                // Users
+                ModifyUsers mu = new ModifyUsers();
+
+                mu.Text = "Modify user: " + dGV_Accounts.CurrentRow.Cells["Username"].Value.ToString();
+                mu._id = dGV_Accounts.CurrentRow.Cells["ID"].Value.ToString();
+                mu.req = (bool)dGV_Accounts.CurrentRow.Cells["req"].Value;
+                mu.lbl_ID.Text = "ID: " + mu._id;
+                mu.chkB_ActYes.Checked = (bool)dGV_Accounts.CurrentRow.Cells["Active"].Value;
+                mu.lbl_Request.Text = "Request: " + dGV_Accounts.CurrentRow.Cells["Request"].Value.ToString();
+
+                mu.ShowDialog();
+                
+                if (mu.DialogResult == DialogResult.OK)
+                {
+                    accounToolStripMenuItem_Click(sender, e);
+                }
+            }
         }
 
         // Admin Human Resource
