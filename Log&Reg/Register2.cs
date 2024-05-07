@@ -164,7 +164,7 @@ namespace WIPR170124.Log_Reg
 
                     if (user.AddUser(Convert.ToInt32(txtB_ID.Text), txtB_Fname.Text, txtB_Lname.Text, txtB_Username.Text, new PassHasher().HashPassword(txtB_Password.Text), pic, type))
                     {
-                        MessageBox.Show("Registered! Try logging in now!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Registered! You can log in once your account is approved!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                         return;

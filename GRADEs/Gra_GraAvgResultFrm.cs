@@ -264,7 +264,7 @@ namespace WIPR170124.GRADEs
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Average Score Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
