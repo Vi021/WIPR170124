@@ -88,7 +88,9 @@ namespace WIPR170124
 
             //Application.Run(new StuModifyInfo());
 
-            /*MainForm mFrm = new MainForm();
+            /*_id = 2;
+            _username = "stVi";
+            MainForm mFrm = new MainForm();
             mFrm.setAdState = false;
             Application.Run(mFrm);*/
 

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WIPR170124.ServiceClasses;
 
@@ -24,9 +18,9 @@ namespace WIPR170124.CONTACT_GROUPs
         {
             try
             {
-                using(SqlConnection conn = new MyDB().Connection)
+                using (SqlConnection conn = new MyDB().Connection)
                 {
-                    string getStr = "SELECT ID, GName FROM Groups";
+                    string getStr = $"SELECT ID, GName FROM Groups WHERE UID = {Program._id}";
                     using (SqlCommand cmd = new SqlCommand(getStr, conn))
                     {
                         DataTable dt = group.GetGroups(cmd);
@@ -80,6 +74,21 @@ namespace WIPR170124.CONTACT_GROUPs
                     picCol = (DataGridViewImageColumn)dGV_Contacts.Columns["pfp"];
                     picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
                 }
+            }
+        }
+
+        private void dGV_Contacts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Con_CouGraListFrm cCGLF = new Con_CouGraListFrm();
+                cCGLF._name = dGV_Contacts.CurrentRow.Cells["Lname"].Value.ToString() + " " + dGV_Contacts.CurrentRow.Cells["Fname"].Value.ToString();
+                cCGLF.id = (int)dGV_Contacts.CurrentRow.Cells["ConID"].Value;
+                cCGLF.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Contacts", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

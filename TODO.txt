@@ -4,5 +4,4 @@
 - print
 - score average result search button
 - result print student scores
-- admin
 - click teacher -> show list courses and score of each course
