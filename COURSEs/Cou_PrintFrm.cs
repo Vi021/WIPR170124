@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using WIPR170124.STUDENTs;
 
 namespace WIPR170124.COURSEs
 {
@@ -29,7 +31,12 @@ namespace WIPR170124.COURSEs
 
         private void bttn_Print_Click(object sender, EventArgs e)
         {
-
+            PrinterFrm printer = new PrinterFrm();
+            printer._SourceDT = dGV_Print.DataSource as DataTable;
+            printer._DSName = "DS_Courses";
+            printer._DTName = (dGV_Print.DataSource as DataTable).TableName;
+            printer._rdlc = "COURSEs.CourseReport";
+            printer.ShowDialog();
         }
     }
 }

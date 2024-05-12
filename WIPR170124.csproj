@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,11 +61,11 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Licensing.25.1.35\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=25.1462.42.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.25.1.42\lib\net462\Syncfusion.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -101,6 +104,12 @@
     </Compile>
     <Compile Include="CONTACT&amp;GROUPs\Con_ListFrm.Designer.cs">
       <DependentUpon>Con_ListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_CouGraListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONTACT&amp;GROUPs\Con_CouGraListFrm.Designer.cs">
+      <DependentUpon>Con_CouGraListFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="CONTACT&amp;GROUPs\Gro_AddFrm.cs">
       <SubType>Form</SubType>
@@ -186,6 +195,12 @@
     <Compile Include="GRADEs\Gra_StatisticResultFrm.Designer.cs">
       <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GRADEs\Gra_StuSelectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_StuSelectFrm.Designer.cs">
+      <DependentUpon>Gra_StuSelectFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Log&amp;Reg\Login2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,7 +232,6 @@
     <Compile Include="ServiceForms\ModifyUsers.Designer.cs">
       <DependentUpon>ModifyUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ServiceForms\PrinterFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,11 +363,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WIPR_170124DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WIPR_170124DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WIPR_170124DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WIPR_170124_d300424.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WIPR_170124_d300424.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_CouGraListFrm.resx">
+      <DependentUpon>Con_CouGraListFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_EditFrm.resx">
       <DependentUpon>Con_EditFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,6 +414,8 @@
     <EmbeddedResource Include="COURSEs\Cou_StuListFrm.resx">
       <DependentUpon>Cou_StuListFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\CourseReport.rdlc" />
+    <EmbeddedResource Include="GRADEs\AvgScoreReport.rdlc" />
     <EmbeddedResource Include="GRADEs\AvgScoreResult.rdlc" />
     <EmbeddedResource Include="GRADEs\Gra_AddFrm.resx">
       <DependentUpon>Gra_AddFrm.cs</DependentUpon>
@@ -408,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GRADEs\Gra_StatisticResultFrm.resx">
       <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_StuSelectFrm.resx">
+      <DependentUpon>Gra_StuSelectFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log&amp;Reg\Login2.resx">
       <DependentUpon>Login2.cs</DependentUpon>
@@ -468,7 +500,7 @@
     <EmbeddedResource Include="Log&amp;Reg\ResetPassFrm.resx">
       <DependentUpon>ResetPassFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="STUDENTs\StuReport.rdlc" />
+    <EmbeddedResource Include="STUDENTs\StuClassReport.rdlc" />
     <EmbeddedResource Include="STUDENTs\StuSeacrhFrm.resx">
       <DependentUpon>StuSeacrhFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +539,17 @@
     <None Include="WIPR_170124DataSet.xss">
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
     </None>
+    <None Include="WIPR_170124DataSet1.xsc">
+      <DependentUpon>WIPR_170124DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WIPR_170124DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WIPR_170124DataSet1.xss">
+      <DependentUpon>WIPR_170124DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="WIPR_170124DataSet2.xsc">
       <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
     </None>
@@ -518,6 +561,17 @@
     <None Include="WIPR_170124DataSet2.xss">
       <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
     </None>
+    <None Include="WIPR_170124_d300424.xsc">
+      <DependentUpon>WIPR_170124_d300424.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124_d300424.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WIPR_170124_d300424.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WIPR_170124_d300424.xss">
+      <DependentUpon>WIPR_170124_d300424.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -527,19 +581,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TODO.txt" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\closedEyeIcon.png" />
     <None Include="Resources\openEyeIcon.png" />
     <Content Include="Resources\hcmuteLogo.png" />
@@ -547,4 +588,10 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>

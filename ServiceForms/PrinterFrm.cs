@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -75,14 +76,40 @@ namespace WIPR170124.STUDENTs
             repV_1.LocalReport.DataSources.Clear();
             repV_1.LocalReport.DataSources.Add(rds);
             repV_1.RefreshReport();
+        }
 
+        internal bool spsr = false;
+        public void SPSR(string stuid, string name)
+        {
+            if (_SourceDT != null)
+            {
+                DataSet dS = new DataSet(_DSName);
 
+                dS.Tables.Add(_SourceDT);
+
+                repV_1.LocalReport.ReportEmbeddedResource = $"WIPR170124.{_rdlc}.rdlc";
+
+                ReportDataSource rds = new ReportDataSource();
+                rds.Name = _DSName;
+                rds.Value = dS.Tables[0];
+
+                /*Microsoft.Reporting.WinForms.ReportParameter _sid = new Microsoft.Reporting.WinForms.ReportParameter("stuid", stuid);
+                repV_1.LocalReport.SetParameters(_sid);
+                ReportParameter _name = new ReportParameter("name", name);
+                repV_1.LocalReport.SetParameters(_name);*/
+
+                repV_1.LocalReport.DataSources.Clear();
+                this.repV_1.LocalReport.DataSources.Add(rds);
+                this.repV_1.RefreshReport();
+            }
         }
 
         private void print_Load(object sender, EventArgs e)
         {
             repV_1.LocalReport.DataSources.Clear();
 
+            if (spsr) return;
+            
             if (_SourceDS != null)
             {
                 useDS();

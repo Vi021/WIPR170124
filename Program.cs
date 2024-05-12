@@ -84,11 +84,9 @@ namespace WIPR170124
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new StuPrintFrm());
-
-            //Application.Run(new StuModifyInfo());
-
-            /*MainForm mFrm = new MainForm();
+            /*_id = 2;
+            _username = "stVi";
+            MainForm mFrm = new MainForm();
             mFrm.setAdState = false;
             Application.Run(mFrm);*/
 

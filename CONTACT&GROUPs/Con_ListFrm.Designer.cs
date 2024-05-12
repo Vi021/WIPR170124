@@ -74,6 +74,7 @@
             this.dGV_Contacts.RowTemplate.Height = 28;
             this.dGV_Contacts.Size = new System.Drawing.Size(1237, 423);
             this.dGV_Contacts.TabIndex = 2;
+            this.dGV_Contacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Contacts_CellClick);
             // 
             // pnl_Menu
             // 
