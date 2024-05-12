@@ -222,7 +222,7 @@ namespace WIPR170124
         {
             PrinterFrm pFrm = new PrinterFrm();
             pFrm._SourceDT = _FilteredDT;
-            pFrm._rdlc = "STUDENTs.StuReport";
+            pFrm._rdlc = "STUDENTs.StuClassReport";
             pFrm._getStr = "SELECT * FROM QLSVDB";
             pFrm._DSName = "dS_StudentList";
             pFrm._DTName = "Student List";

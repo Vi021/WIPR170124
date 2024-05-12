@@ -88,11 +88,11 @@ namespace WIPR170124
 
             //Application.Run(new StuModifyInfo());
 
-            /*_id = 2;
+            _id = 2;
             _username = "stVi";
             MainForm mFrm = new MainForm();
             mFrm.setAdState = false;
-            Application.Run(mFrm);*/
+            Application.Run(mFrm);
 
             //Application.Run(new CONTACTs_GRORPs.CG_MainFrm());
 
@@ -100,7 +100,7 @@ namespace WIPR170124
 
             //log();
 
-            log2();
+            //log2();
         }
     }
 }

@@ -195,6 +195,12 @@
     <Compile Include="GRADEs\Gra_StatisticResultFrm.Designer.cs">
       <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GRADEs\Gra_StuSelectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRADEs\Gra_StuSelectFrm.Designer.cs">
+      <DependentUpon>Gra_StuSelectFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Log&amp;Reg\Login2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,10 +363,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WIPR_170124DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WIPR_170124DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WIPR_170124DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WIPR_170124_d300424.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WIPR_170124_d300424.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CONTACT&amp;GROUPs\Con_CouGraListFrm.resx">
       <DependentUpon>Con_CouGraListFrm.cs</DependentUpon>
@@ -398,6 +414,8 @@
     <EmbeddedResource Include="COURSEs\Cou_StuListFrm.resx">
       <DependentUpon>Cou_StuListFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="COURSEs\CourseReport.rdlc" />
+    <EmbeddedResource Include="GRADEs\AvgScoreReport.rdlc" />
     <EmbeddedResource Include="GRADEs\AvgScoreResult.rdlc" />
     <EmbeddedResource Include="GRADEs\Gra_AddFrm.resx">
       <DependentUpon>Gra_AddFrm.cs</DependentUpon>
@@ -419,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GRADEs\Gra_StatisticResultFrm.resx">
       <DependentUpon>Gra_StatisticResultFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRADEs\Gra_StuSelectFrm.resx">
+      <DependentUpon>Gra_StuSelectFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log&amp;Reg\Login2.resx">
       <DependentUpon>Login2.cs</DependentUpon>
@@ -479,7 +500,7 @@
     <EmbeddedResource Include="Log&amp;Reg\ResetPassFrm.resx">
       <DependentUpon>ResetPassFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="STUDENTs\StuReport.rdlc" />
+    <EmbeddedResource Include="STUDENTs\StuClassReport.rdlc" />
     <EmbeddedResource Include="STUDENTs\StuSeacrhFrm.resx">
       <DependentUpon>StuSeacrhFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +539,17 @@
     <None Include="WIPR_170124DataSet.xss">
       <DependentUpon>WIPR_170124DataSet.xsd</DependentUpon>
     </None>
+    <None Include="WIPR_170124DataSet1.xsc">
+      <DependentUpon>WIPR_170124DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WIPR_170124DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WIPR_170124DataSet1.xss">
+      <DependentUpon>WIPR_170124DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="WIPR_170124DataSet2.xsc">
       <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
     </None>
@@ -528,6 +560,17 @@
     </None>
     <None Include="WIPR_170124DataSet2.xss">
       <DependentUpon>WIPR_170124DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124_d300424.xsc">
+      <DependentUpon>WIPR_170124_d300424.xsd</DependentUpon>
+    </None>
+    <None Include="WIPR_170124_d300424.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WIPR_170124_d300424.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WIPR_170124_d300424.xss">
+      <DependentUpon>WIPR_170124_d300424.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

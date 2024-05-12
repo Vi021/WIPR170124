@@ -9,6 +9,7 @@ using WIPR170124.CONTACTs_GRORPs;
 using WIPR170124.COURSEs;
 using WIPR170124.GRADEs;
 using WIPR170124.ServiceForms;
+using WIPR170124.STUDENTs;
 
 namespace WIPR170124
 {
@@ -302,7 +303,8 @@ namespace WIPR170124
         // SCORE Print
         private void printToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //TODO
+            Gra_StuSelectFrm gSSFrm = new Gra_StuSelectFrm();
+            gSSFrm.ShowDialog();
         }
 
         // SCORE Result: Score Average Result

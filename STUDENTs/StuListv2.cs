@@ -228,7 +228,7 @@ namespace WIPR170124
             this.StudentList_Load(sender, e);
         }
 
-        private bool verif(string id, string fname, string lname, string bdate, string gender, string gmail/*, string sdt, string addr, int index*/)
+        private bool verif(string id, string fname, string lname, string bdate, string gender, string gmail, string sdt, string addr/*, int index*/)
         {
             if (id == "" || fname == "" || lname == "" || bdate == "" || gender == "" || gmail == "" /*|| sdt == "" || addr == ""*/)
             {
@@ -238,18 +238,18 @@ namespace WIPR170124
             {
                 MessageBox.Show("ID chỉ bao gồm số: ID: " + id, "Import Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            /*else if (!Regex.IsMatch(fname, "^[a-zA-Z\\s]+$") || !Regex.IsMatch(lname, "^[a-zA-Z\\s]+$"))
+            else if (!Regex.IsMatch(fname, "^[a-zA-Z\\s]+$") || !Regex.IsMatch(lname, "^[a-zA-Z\\s]+$"))
             {
                 MessageBox.Show("Tên chỉ bao gồm kí tự và khoảng trắng, ID: " + id, "Import Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
-            /*else if (gender.Trim() != "Male" && gender.Trim() != "Female" && gender.Trim() != "Other")
+            }
+            else if (gender.Trim() != "Male" && gender.Trim() != "Female" && gender.Trim() != "Other")
             {
                 MessageBox.Show("Giới tính chỉ bao gồm các dữ liệu (Male, Female, Other), ID: " + id, "Import Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
-            /*else if (!Regex.IsMatch(sdt, "^[0-9]+$"))
+            }
+            else if (!Regex.IsMatch(sdt, "^[0-9]+$"))
             {
                 MessageBox.Show("Số điện thoại chỉ bao gồm số, ID: " + id, "Import Student", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
+            }
             else
             {
                 return true;
@@ -291,10 +291,10 @@ namespace WIPR170124
                                 string column4Value = row.Cells["bdate"].Value?.ToString() ?? "";
                                 string column5Value = row.Cells[4].Value?.ToString() ?? "";
                                 string column6Value = row.Cells["email"].Value?.ToString() ?? "";
-                                /*string column7Value = row.Cells["Số điện thoại"].Value?.ToString() ?? "";
-                                string column8Value = row.Cells["Địa chỉ"].Value?.ToString() ?? "";*/
+                                string column7Value = row.Cells["Số điện thoại"].Value?.ToString() ?? "";
+                                string column8Value = row.Cells["Địa chỉ"].Value?.ToString() ?? "";
 
-                                if (verif(column1Value, column2Value, column3Value, column4Value, column5Value, column6Value/*, column7Value, column8Value, row.Index*/) == false)
+                                if (verif(column1Value, column2Value, column3Value, column4Value, column5Value, column6Value, column7Value, column8Value/*, row.Index*/) == false)
                                 {
                                     return;
                                 }
@@ -314,8 +314,8 @@ namespace WIPR170124
                                 string column4Value = row.Cells["bdate"].Value?.ToString() ?? "";
                                 string column5Value = row.Cells[4].Value?.ToString() ?? "";
                                 string column6Value = row.Cells["email"].Value?.ToString() ?? "";
-                                /*string column7Value = row.Cells["Số điện thoại"].Value?.ToString() ?? "";
-                                string column8Value = row.Cells["Địa chỉ"].Value?.ToString() ?? "";*/
+                                string column7Value = row.Cells["Số điện thoại"].Value?.ToString() ?? "";
+                                string column8Value = row.Cells["Địa chỉ"].Value?.ToString() ?? "";
 
                                 // Convert Column 4 value to DateTime object
                                 if (DateTime.TryParse(column4Value, out DateTime dateValue))
