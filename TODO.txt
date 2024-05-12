@@ -1,7 +1,3 @@
 ﻿- username/mail - pass login
 	+ user administration request
-- fix import, export
-- print
-- score average result search button
-- result print student scores
-- click teacher -> show list courses and score of each course
+- fix import
