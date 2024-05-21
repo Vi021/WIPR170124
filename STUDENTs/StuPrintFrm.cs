@@ -73,6 +73,8 @@ namespace WIPR170124
         private void comB_Filter_SelectedIndexChanged(object sender, EventArgs e)
         {
             //dGV_1.DataSource = fillStudents();
+            if (comB_Filter.SelectedItem == null) { return; }
+
             if (comB_Filter.SelectedItem.ToString().Contains("Gender"))
             {
                 lbl_From.Visible = false;
