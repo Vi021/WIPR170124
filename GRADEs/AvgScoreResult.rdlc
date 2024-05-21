@@ -1653,7 +1653,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dS_ASR</DataSetName>
-        <Top>2.29667in</Top>
+        <Top>2.17167in</Top>
         <Left>0.48834in</Left>
         <Height>0.845in</Height>
         <Width>10.25832in</Width>
@@ -1806,7 +1806,7 @@
             <TablixMember />
           </TablixMembers>
         </TablixRowHierarchy>
-        <Top>1.83833in</Top>
+        <Top>3.55556in</Top>
         <Left>8.56333in</Left>
         <Height>0.25in</Height>
         <Width>1.91667in</Width>
@@ -1817,8 +1817,45 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Chữ ký</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>3.87501in</Top>
+        <Left>9.31333in</Left>
+        <Height>0.25in</Height>
+        <Width>0.575in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.71667in</Height>
+    <Height>5.41667in</Height>
     <Style />
   </Body>
   <Width>11.23833in</Width>
